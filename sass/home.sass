@@ -1,0 +1,319 @@
+@font-face 
+  font-family: "MT"
+  src: url('../font/ARIALMT.ttf') format("truetype"),url('../font/ARIALMT.woff') format("woff")
+\:root
+  --Dark: #679298
+  --Back: #ECF4F7
+  --Font: #264D52
+  --NAV_F: #ECF4F7
+  --UPBA: rgba(255, 255, 255, 0.5)
+*
+	margin: auto
+	padding: 0
+	box-sizing: border-box
+	position: relative
+	font-family: "微軟正黑體", cursive
+	\::-webkit-scrollbar
+		width: 5px
+	\::-webkit-scrollbar-track
+		border-radius: 10px
+	\::-webkit-scrollbar-thumb
+		border-radius: 4px
+		background: rgb(219, 219, 219)
+
+html,body
+	width: 100%
+	height: 100%
+	background-color: #fff
+
+.container
+	width: 1280px
+	min-height: 880px
+	background-color: var(--Back)
+	padding: 50px 80px 50px 80px
+.topCarousel
+	border: 1px solid #000
+.route
+	margin-top: 40px
+	min-height: 50px
+	width: 96%
+	// background-color: #7425ce
+.route_box
+    display: grid
+    grid-template-columns: 32.5% 32.5% 32.5%
+    grid-column-gap: 1.25%
+    grid-row-gap: 15px
+    margin: 0 auto
+.route_content
+	width: 100%
+	background-color: var(--UPBA)
+	padding: 20px 15px
+	border-radius: 3px
+	cursor: pointer
+	box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2)
+	
+.route_content a 
+	text-decoration: none
+	color: var(--Font)
+.route_content img
+	float: left
+	height: 60px
+	width: 60px
+	border-radius: 50%
+	margin: 4px 10px 0 10px
+.route_right
+	padding: 0px 0 0px 5px
+	min-height: 70px
+	float: left
+	letter-spacing: 1px
+	color: var(--Font)
+.route_title
+	font-size: 14px
+.route_text
+	font-size: 12px
+	margin: 8px 0 0 0 
+.route_hashtag
+	font-size: 12px
+	margin: 8px 0 0 0
+.hot
+	margin-top: 40px
+	min-height: 50px
+	width: 96%
+	// background-color: #d6b3ff
+.hot_top
+	min-height: 40px
+.hot_title
+	float: left
+	margin-top: 5px
+	margin-right: 20px
+	color: var(--Font)
+	font-size: 20px
+.hot_nav
+	display: flex
+	align-items: center
+	min-height: 50px
+	// width: 800px
+
+//----------tab CSS----------
+#tab
+	width: 80%
+	ul
+		float: left
+		font-family: "微軟正黑體", cursive
+		padding: 0px 5px
+		li
+			text-align: center
+			width: 40px
+			height: 40px
+			margin: 0 5px
+			font-family: "Arial Black"
+			font-weight: bold
+			list-style-type: none
+			outline: 2px solid var(--NAV_F)
+			opacity: 0.5
+			background-size: cover
+		li:hover
+			opacity: 0.7
+		a 
+			position: absolute
+			top: 0.5px
+			left: 0
+			width: 100%
+			height: 100%
+			text-decoration: none
+			color: var(--NAV_F)
+			padding: 1px 0px
+			line-height: 19px
+			font-size: 14px
+span:target ~ #tab > ul li:first-child a
+	font-size: 14px
+	line-height: 19px
+	padding: 1px 0px
+span:target ~ #tab > ul li:first-child
+	opacity: 0.5
+	
+	// -webkit-filter: blur(1px)
+span ~ #tab > ul li:first-child a,
+#tab-1:target ~ #tab > ul .tab-AA a,
+#tab-2:target ~ #tab > ul .tab-BB a,
+#tab-3:target ~ #tab > ul .tab-CC a,
+#tab-4:target ~ #tab > ul .tab-DD a,
+	padding: 4px 0px
+	line-height: 16px
+	font-size: 12px
+	transition: all .1s ease
+span ~ #tab > ul li:first-child,
+#tab-1:target ~ #tab > ul .tab-AA,
+#tab-2:target ~ #tab > ul .tab-BB,
+#tab-3:target ~ #tab > ul .tab-CC,
+#tab-4:target ~ #tab > ul .tab-DD,
+	opacity: 1
+span ~ #tab > ul li:first-child:hover,
+	opacity: 0.7
+//----------tab CSS----------
+
+.hot_content
+	margin-top: 30px
+	background-color: var(--UPBA)
+	color: #264D52
+	padding: 20px 25px
+	letter-spacing: 1px
+	box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2)
+
+.hot_content_right
+	left: 50px
+	float: right
+	width: 55%
+.hot_content_title
+	font-size: 17px
+	line-height: 50px
+
+.hot_content_text
+	margin: 5px 25px
+	font-size: 14px
+	line-height: 24px
+.hot_content img
+	width: 45%
+	height: 245px
+.new
+	margin-top: 40px
+	min-height: 50px
+	width: 96%
+	// background-color: #d6b3ff
+	color: var(--Font)
+.new_title
+	float: left
+	margin-right: 20px
+	font-size: 20px
+
+.new_smalltitle
+	padding: 7.5px 0 0 0 
+	font-size: 12px
+	text-decoration: underline
+.new_box
+	width: 100%
+	margin-top: 30px
+	display: grid
+	grid-template-columns: repeat(10,10%)
+	grid-template-rows: 150px 150px
+.new_img
+	width: 100%
+	height: 100%
+	outline: 1px solid var(--Font)
+.new_img1
+	grid-column: span 2
+.new_img2
+	grid-column: span 2
+.new_img3
+	grid-column: span 3
+.new_img4
+	grid-column: span 3
+.new_img5
+	grid-column: span 4
+.new_img6
+	grid-column: span 3
+.new_img7
+	grid-column: span 3
+
+//----------bootstrap CSS----------
+
+.d-block
+	display: block
+.w-100
+	width: 100%
+	height: 80vh
+.carousel
+	position: relative
+.carousel-inner
+	position: relative
+	width: 100%
+	overflow: hidden
+.carousel-item
+	position: relative
+	display: none
+	align-items: center
+	width: 100%
+	transition: transform .6s ease
+	backface-visibility: hidden
+	perspective: 1000px
+
+.carousel-item-next, .carousel-item-prev, .carousel-item.active
+	display: block
+
+.carousel-item-next, .carousel-item-prev
+	position: absolute
+	top: 0
+
+.carousel-item-next.carousel-item-left, .carousel-item-prev.carousel-item-right
+	transform: translateX(0)
+
+@supports (-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)
+	.carousel-item-next.carousel-item-left, .carousel-item-prev.carousel-item-right
+		transform: translate3d(0, 0, 0)
+
+.active.carousel-item-right, .carousel-item-next
+	transform: translateX(100%)
+
+@supports (-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)
+	.active.carousel-item-right, .carousel-item-next
+		transform: translate3d(100%, 0, 0)
+
+.active.carousel-item-left, .carousel-item-prev
+	transform: translateX(-100%)
+
+@supports (-webkit-transform-style: preserve-3d) or (transform-style: preserve-3d)
+	.active.carousel-item-left, .carousel-item-prev
+		transform: translate3d(-100%, 0, 0)
+
+.carousel-control-next, .carousel-control-prev
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	padding: 20px 30px 20px 10px
+	color: #000
+	background-color: #fff
+	text-align: center
+	opacity: 0.5
+	&:focus, &:hover
+		text-decoration: none
+		outline: 0
+		opacity: 0.9
+
+.carousel-indicators
+	position: absolute
+	bottom: 15px
+	left: 0
+	right: 0
+	z-index: 15
+	display: flex
+	justify-content: center
+	padding-left: 0
+	margin: 0 15%
+	list-style: none
+	li
+		position: relative
+		flex: 0 1 auto
+		width: 40px
+		height: 5px
+		margin: 0 3px
+		text-indent: -999px
+		background-color: rgba(255, 255, 255, 0.5)
+		&::before
+			position: absolute
+			top: -10px
+			left: 0
+			display: inline-block
+			width: 100%
+			height: 10px
+			content: ""
+		&::after
+			position: absolute
+			bottom: -10px
+			left: 0
+			display: inline-block
+			width: 100%
+			height: 10px
+			content: ""
+	.active
+		background-color: #fff
+

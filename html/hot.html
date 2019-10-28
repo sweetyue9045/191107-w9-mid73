@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>景點/未定</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/hot.css" />
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/" />
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body onload="attraction()">
+    <header>
+        <div class="H_title"><a href="../index.html">LOGO</a></div>
+        <nav>
+          <ul class="nav_bar">
+            <li><a href="hot.html">景點</a></li>
+            <li><a href="">未定</a></li>
+            <li><a href="">未定</a></li>
+            <li><a href="">未定</a></li>
+          </ul>
+        </nav>
+        <div class="H_right">
+            <a href="" class="BTN">
+                <div>登入 / 註冊</div>
+            </a>
+            <div class="H_line"></div>
+            <a href="" class="BTN">
+                <div>Language</div>
+            </a>
+            <a href="" class="BTN">
+                <i class="fas fa-search" style="margin: 2px;"></i>
+            </a>
+        </div>
+    </header>
+    <div class="Carousel">
+        <div class="topCarousel">
+            <div class="box"></div>
+            <div class="input-group" id="input-group">
+                <div class="dropdown-btn" id="dropdown-btn">
+                    <button type="button" class="btn dropdown-toggle" id="dropdown-toggle"
+                        style="	border-right: 0px transparent ; outline: none">
+                        <i class="fas fa-chevron-down" id="dropdown-toggle" style="display:block"></i>
+                        <i class="fas fa-chevron-up" id="dropdown-toggle" style="display:none"></i>
+                    </button>
+                    <ul class="dropdown-menu" id="dropdown-menu">
+                        <li><a href="#" onclick="area(this)">台北</a></li>
+                        <li><a href="#" onclick="area(this)">新北</a></li>
+                        <li><a href="#" onclick="area(this)">台中</a></li>
+                    </ul>
+                </div>
+                <input type="text" class="form-control" id="form-control" placeholder="搜尋..." autofocus>
+                <style id="m-search"></style>
+                <button type="button" class="btn search" style="outline: none" id="searchitem">
+                    <i class="fas fa-search" style="margin: 2px;"></i>
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="text-center">
+            <!-- loading icon旋轉小圖示 -->
+            <div class="loader" id="load"></div>
+            <!-- 呼叫的後端資料 -->
+            <div id="attraction_hot">
+                <img
+                    src="https://4.bp.blogspot.com/-jdGreROMIPs/XEKoh9IsHUI/AAAAAAAAHwU/z-85iqyPyfkxud0Uov1tsFI1fK9zuHVSQCK4BGAYYCw/s1600/%25E8%25B3%25BD%25E4%25BA%259E%25E4%25BA%25BA%25E5%2598%259F%25E5%2598%25B4.jpg">
+            </div>
+            <div class="attraction_content" id="attraction_content" style="outline: 1px solid black; display: none;">
+            </div>
+        </div>
+        <!-- <div class="hot">
+            <div class="carousel slide" id="A1" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><img class="d-block w-100" src="" alt="First slide" />1</div>
+                    <div class="carousel-item"><img class="d-block w-100" src="" alt="Second slide" />2</div>
+                    <div class="carousel-item"><img class="d-block w-100" src="" alt="Third slide" />3</div>
+                </div>
+                <ol class="carousel-indicators">
+                    <li class="active" data-target="#A1" data-slide-to="0"></li>
+                    <li data-target="#A1" data-slide-to="1"></li>
+                    <li data-target="#A1" data-slide-to="2"></li>
+                </ol>
+            </div>
+            <a class="carousel-control-prev" href="#A2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true">
+                    <i class="fas fa-angle-left fa-2x"></i> </span>
+                <span class="sr-only">Previous
+                </span>
+            </a>
+            <a class="carousel-control-next" href="#A2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true">
+                    <i class="fas fa-angle-right fa-2x"> </i> </span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div> -->
+
+    </div>
+    <footer>
+        <div class="F_left">注意事項 > 隱私權政策<br>
+            關於我們 ‧ 服務條款/政策 ‧ 交易安全 ‧ 使用條款 ‧ 客戶中心 ‧ 聯絡我們<br>
+            Copyright © 2019 ____________________. All Rights Reserved.
+        </div>
+        <div class="F_title">LOGO</div>
+    </footer>
+    <!-- <a id="backtotop" href="#HOME" title="返回頂部"><i class="fas fa-chevron-circle-up fa-3x" alt="Back to Top"></i></a> -->
+
+</body>
+
+</html>

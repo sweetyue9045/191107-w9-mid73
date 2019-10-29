@@ -52,11 +52,6 @@ html, body {
   padding: 50px 80px 50px 80px;
 }
 
-.topCarousel {
-  position: relative;
-  height: 100%;
-}
-
 .input-group {
   position: relative;
   display: -webkit-box;

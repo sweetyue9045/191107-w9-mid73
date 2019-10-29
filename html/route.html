@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>景點/未定</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/route.css" />
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/" />
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body onload="attraction()">
+    <header>
+        <div class="H_title"><a href="../index.html">LOGO</a></div>
+        <nav>
+            <ul class="nav_bar">
+                <li><a href="../index.html">首頁</a></li>
+                <li><a href="hot.html">景點</a></li>
+                <li><a href="route.html">推薦行程</a></li>
+                <li><a href="">未定</a></li>
+                <li><a href="">未定</a></li>
+            </ul>
+        </nav>
+        <div class="H_right">
+            <a href="" class="BTN">
+                <div>登入 / 註冊</div>
+            </a>
+            <div class="H_line"></div>
+            <a href="" class="BTN">
+                <div>Language</div>
+            </a>
+        </div>
+    </header>
+    <!-- <div class="Carousel">
+        <div class="topCarousel">
+            <div class="box"></div>
+            <div class="input-group" id="input-group">
+                <div class="dropdown-btn" id="dropdown-btn">
+                    <button type="button" class="btn dropdown-toggle" id="dropdown-toggle"
+                        style="	border-right: 0px transparent ; outline: none">
+                        <i class="fas fa-chevron-down" id="dropdown-toggle" style="display:block"></i>
+                        <i class="fas fa-chevron-up" id="dropdown-toggle" style="display:none"></i>
+                    </button>
+                    <ul class="dropdown-menu" id="dropdown-menu">
+                        <li><a href="#" onclick="area(this)">台北</a></li>
+                        <li><a href="#" onclick="area(this)">新北</a></li>
+                        <li><a href="#" onclick="area(this)">台中</a></li>
+                    </ul>
+                </div>
+                <input type="text" class="form-control" id="form-control" placeholder="搜尋..." autofocus>
+                <style id="m-search"></style>
+                <button type="button" class="btn search" style="outline: none" id="searchitem">
+                    <i class="fas fa-search" style="margin: 2px;"></i>
+                </button>
+
+            </div>
+
+        </div>
+    </div> -->
+    <div class="container">
+        <form>
+            <div class="input-group" id="input-group">
+                <input type="text" class="form-control" id="form-control" placeholder="搜尋..." autofocus>
+                <style id="m-search"></style>
+                <button type="button" class="btn search" style="outline: none" id="searchitem">
+                    <i class="fas fa-search" style="margin: 2px;"></i>
+                </button>
+
+            </div>
+            <input type="radio" id="CheckAll" />
+            <label for="CheckAll">全部</label> <br />
+            <input type="checkbox" class="items" id="items1" />
+            <label for="items1">北部▸基隆 宜蘭 台北 新北 桃園 新竹</label><br />
+            <input type="checkbox" class="items" id="items2" />
+            <label for="items2">中部▸苗栗 台中 彰化 南投 雲林</label><br />
+            <input type="checkbox" class="items" id="items3" />
+            <label for="items3">南部▸嘉義 台南 高雄 屏東</label><br />
+            <input type="checkbox" class="items" id="items4" />
+            <label for="items4">東部▸花蓮 台東</label><br />
+            <input type="checkbox" class="items" id="items5" />
+            <label for="items5">離島▸澎湖 金門 馬祖</label>
+        </form>
+    </div>
+    <footer>
+        <div class="F_left">注意事項 > 隱私權政策<br>
+            關於我們 ‧ 服務條款/政策 ‧ 交易安全 ‧ 使用條款 ‧ 客戶中心 ‧ 聯絡我們<br>
+            Copyright © 2019 ____________________. All Rights Reserved.
+        </div>
+        <div class="F_title">LOGO</div>
+    </footer>
+    <!-- <a id="backtotop" href="#HOME" title="返回頂部"><i class="fas fa-chevron-circle-up fa-3x" alt="Back to Top"></i></a> -->
+
+</body>
+
+</html>

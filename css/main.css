@@ -80,7 +80,7 @@ header a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 800px;
+  width: 900px;
   margin: 3px 0 0 0;
 }
 
@@ -99,7 +99,7 @@ header a {
 
 .H_right {
   margin: 5px 0 0 0;
-  width: 190px;
+  width: 170px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

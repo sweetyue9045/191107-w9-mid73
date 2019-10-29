@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "MT";
+  src: url("../font/ARIALMT.ttf") format("truetype"), url("../font/ARIALMT.woff") format("woff");
+}
+
+:root {
+  --Dark: #679298;
+  --Back: #ECF4F7;
+  --Font: #264D52;
+  --NAV_F: #ECF4F7;
+  --UPBA: rgba(255, 255, 255, 0.5);
+}
+
+* {
+  margin: auto;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  font-family: "微軟正黑體", cursive;
+}
+
+* ::-webkit-scrollbar {
+  width: 5px;
+}
+
+* ::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+* ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #dbdbdb;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.Carousel {
+  width: 1280px;
+  height: 300px;
+}
+
+.container {
+  width: 1280px;
+  min-height: 880px;
+  background-color: var(--Back);
+  padding: 50px 80px 50px 80px;
+}
+/*# sourceMappingURL=route.css.map */

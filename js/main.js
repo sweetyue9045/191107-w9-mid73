@@ -2,7 +2,7 @@
 var searchbar = 0;
 $(function () {
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 50) {
+		if ($(this).scrollTop() > 100) {
 			$('#backtotop').stop().animate({ bottom: "20px" });
 		}
 		else {
@@ -61,7 +61,18 @@ $(function () {
 			show();
 		}
 	});
+	//--首頁輪播速度--
+	$('.carousel1').carousel({
+		interval: 2000
+	})
+	//--行程頁選擇--
+	$("#CheckAll").click(function () {
+		$(".items:checkbox").prop("checked", false)
+	});
 
+	$(".items").click(function () {
+		$("#CheckAll").prop("checked", false)
+	});
 });
 
 //----------首頁渲染----------
@@ -147,3 +158,10 @@ function area(area) {
 	show()
 
 }
+
+
+
+
+$(function () {
+	
+});

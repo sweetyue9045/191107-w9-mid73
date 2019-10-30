@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>景點/未定</title>
+    <title>行程推薦/未定</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
@@ -19,13 +19,13 @@
 
 </head>
 
-<body onload="attraction()">
+<body onload="route()">
     <header>
         <div class="H_title"><a href="../index.html">LOGO</a></div>
         <nav>
             <ul class="nav_bar">
                 <li><a href="../index.html">首頁</a></li>
-                <li><a href="hot.html">景點</a></li>
+                <li><a href="attraction.html">景點</a></li>
                 <li><a href="route.html">推薦行程</a></li>
                 <li><a href="">未定</a></li>
                 <li><a href="">未定</a></li>
@@ -69,27 +69,48 @@
     </div> -->
     <div class="container">
         <form>
-            <div class="input-group" id="input-group">
-                <input type="text" class="form-control" id="form-control" placeholder="搜尋..." autofocus>
-                <style id="m-search"></style>
-                <button type="button" class="btn search" style="outline: none" id="searchitem">
-                    <i class="fas fa-search" style="margin: 2px;"></i>
+            <div class="route_input_group" id="route_input_group">
+                <input type="text" class="route_form_control" id="route_form_control" placeholder="搜尋..." autofocus autocomplete="off">
+                <style id="route_search"></style>
+                <button type="button" class="btn route_search" style="outline: none" onclick="change(this)">
+                    <i class="fas fa-search"></i>
                 </button>
 
             </div>
-            <input type="radio" id="CheckAll" />
-            <label for="CheckAll">全部</label> <br />
-            <input type="checkbox" class="items" id="items1" />
-            <label for="items1">北部▸基隆 宜蘭 台北 新北 桃園 新竹</label><br />
-            <input type="checkbox" class="items" id="items2" />
-            <label for="items2">中部▸苗栗 台中 彰化 南投 雲林</label><br />
-            <input type="checkbox" class="items" id="items3" />
-            <label for="items3">南部▸嘉義 台南 高雄 屏東</label><br />
-            <input type="checkbox" class="items" id="items4" />
-            <label for="items4">東部▸花蓮 台東</label><br />
-            <input type="checkbox" class="items" id="items5" />
-            <label for="items5">離島▸澎湖 金門 馬祖</label>
+            <div class="choose_box">
+                <input type="radio" id="CheckAll" onclick="choose(this)" checked />
+                <label for="CheckAll" class="choose"></label>
+                <label for="CheckAll">全部</label>
+            </div>
+            <div class="choose_box">
+                <input type="checkbox" class="items" id="northern" onclick="choose(this)"/>
+                <label for="northern" class="choose"></label>
+                <label for="northern">北部▸基隆 宜蘭 台北 新北 桃園 新竹</label>
+            </div>
+            <div class="choose_box">
+                <input type="checkbox" class="items" id="central" onclick="choose(this)" />
+                <label for="central" class="choose"></label>
+                <label for="central">中部▸苗栗 台中 彰化 南投 雲林</label>
+
+            </div>
+            <div class="choose_box">
+                <input type="checkbox" class="items" id="southern" onclick="choose(this)" />
+                <label for="southern" class="choose"></label>
+                <label for="southern">南部▸嘉義 台南 高雄 屏東</label>
+            </div>
+            <div class="choose_box">
+                <input type="checkbox" class="items" id="eastern" onclick="choose(this)" />
+                <label for="eastern" class="choose"></label>
+                <label for="eastern">東部▸花蓮 台東</label>
+            </div>
+            <div class="choose_box">
+                <input type="checkbox" class="items" id="islands" onclick="choose(this)" />
+                <label for="islands" class="choose"></label>
+                <label for="islands">離島▸澎湖 金門 馬祖</label>
+            </div>
         </form>
+        <div class="route_content" id="route_content" style="outline: 1px solid black;">
+        </div>
     </div>
     <footer>
         <div class="F_left">注意事項 > 隱私權政策<br>

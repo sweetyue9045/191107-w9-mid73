@@ -1,0 +1,72 @@
+{
+    "northern": [
+        {
+            "area": "keelung"
+        },
+        {
+            "area": "yilan"
+        },
+        {
+            "area": "taipei"
+        },
+        {
+            "area": "newtaipei"
+        },
+        {
+            "area": "taoyuan"
+        },
+        {
+            "area": "hsinchu"
+        }
+    ],
+    "central": [
+        {
+            "area": "miaoli"
+        },
+        {
+            "area": "taichung"
+        },
+        {
+            "area": "changhua"
+        },
+        {
+            "area": "nantou"
+        },
+        {
+            "area": "yunlin"
+        }
+    ],
+    "southern": [
+        {
+            "area": "chiayi"
+        },
+        {
+            "area": "tainan"
+        },
+        {
+            "area": "kaohsiung"
+        },
+        {
+            "area": "pingtung"
+        }
+    ],
+    "eastern": [
+        {
+            "area": "hualien"
+        },
+        {
+            "area": "taitung"
+        }
+    ],
+    "islands": [
+        {
+            "area": "penghu"
+        },
+        {
+            "area": "jinmen"
+        },
+        {
+            "area": "mazu"
+        }
+    ]
+}

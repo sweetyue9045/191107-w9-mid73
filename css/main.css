@@ -50,7 +50,7 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 1280px;
+  width: 100%;
   background-color: var(--Dark);
   padding: 13px 50px;
 }
@@ -127,8 +127,15 @@ header a {
   height: 25px;
 }
 
+.container {
+  width: 100%;
+  min-height: 880px;
+  background-color: var(--Back);
+  padding: 50px 80px 50px 80px;
+}
+
 footer {
-  width: 1280px;
+  width: 100%;
   background-color: var(--Dark);
   padding: 23px 100px;
   display: -webkit-box;

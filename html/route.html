@@ -20,6 +20,22 @@
 </head>
 
 <body onload="route()">
+    <div class="showintro">
+        <div class="INTRO">
+            <div class="intro_top">
+                <i class="fas fa-times closeBtn closeBtn1" aria-hidden="true"></i>
+            </div>
+            <div class="intro_content">
+                <img src="" alt="" />
+            </div>
+            <div class="intro_btm">
+                <i class="far fa-times-circle closeBtn closeBtn2" aria-hidden="true"></i>
+            </div>
+        </div>
+        <a id="backtotop" title="返回頂部">
+            <i class="fas fa-chevron-circle-up fa-2x" alt="Back to Top"></i>
+        </a>
+    </div>
     <header>
         <div class="H_title"><a href="../index.html">LOGO</a></div>
         <nav>
@@ -40,6 +56,7 @@
                 <div>Language</div>
             </a>
         </div>
+        <div class="wrad">
     </header>
     <!-- <div class="Carousel">
         <div class="topCarousel">
@@ -70,7 +87,8 @@
     <div class="container">
         <form>
             <div class="route_input_group" id="route_input_group">
-                <input type="text" class="route_form_control" id="route_form_control" placeholder="搜尋..." autofocus autocomplete="off">
+                <input type="text" class="route_form_control" id="route_form_control" placeholder="搜尋..." autofocus
+                    autocomplete="off">
                 <style id="route_search"></style>
                 <button type="button" class="btn route_search" style="outline: none" onclick="change(this)">
                     <i class="fas fa-search"></i>
@@ -83,7 +101,7 @@
                 <label for="CheckAll">全部</label>
             </div>
             <div class="choose_box">
-                <input type="checkbox" class="items" id="northern" onclick="choose(this)"/>
+                <input type="checkbox" class="items" id="northern" onclick="choose(this)" />
                 <label for="northern" class="choose"></label>
                 <label for="northern">北部▸基隆 宜蘭 台北 新北 桃園 新竹</label>
             </div>
@@ -109,7 +127,7 @@
                 <label for="islands">離島▸澎湖 金門 馬祖</label>
             </div>
         </form>
-        <div class="route_content" id="route_content" style="outline: 1px solid black;">
+        <div class="route_content" id="route_content">
         </div>
     </div>
     <footer>
@@ -119,6 +137,7 @@
         </div>
         <div class="F_title">LOGO</div>
     </footer>
+    </div>
     <!-- <a id="backtotop" href="#HOME" title="返回頂部"><i class="fas fa-chevron-circle-up fa-3x" alt="Back to Top"></i></a> -->
 
 </body>

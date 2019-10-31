@@ -1,12 +1,16 @@
 //----------各種click----------
 var searchbar = 0;
 $(function () {
+	var top = $('.container').offset().top - 55
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 100) {
+		if ($(this).scrollTop() > top) {
 			$('#backtotop').stop().animate({ bottom: "20px" });
+			$(".home_header").attr("style", "background-color: var(--Dark)")
 		}
 		else {
 			$('#backtotop').stop().animate({ bottom: "-65px" });
+			$(".home_header").attr("style", "background-color: transparent ")
+
 		}
 	}).scroll();
 	$('#backtotop').click(function () { $('html,body').animate({ scrollTop: 0 }, 800); });
@@ -49,7 +53,7 @@ $(function () {
 			document.getElementById("dropdown-btn").style.display = "block";
 			document.getElementById("form-control").style.display = "block";
 			document.getElementById("attraction_hot").style.display = "none";
-			document.getElementById("attraction_content").style.display = "block";
+			$('#attraction_content').fadeIn();
 			$("#searchitem").attr("style", "border-radius: 0 4px 4px 0 ;outline: none")
 			$("#input-group").animate({ width: '200px' }, 200);
 			searchbar = 1;
@@ -83,12 +87,20 @@ $(function () {
 		if (check == 0) {
 			$("#CheckAll").prop("checked", true)
 			choosearea = null
+			document.getElementById("route_content").style.display = "none";
 			route(choosearea)
 		}
 	});
 	//--搜尋文字輸入--
 	$(".route_form_control").keydown(function (event) {
+		if ($(".route_form_control").val().length == 1 && event.which == 8) {
+			document.getElementById("route_form_control").value = ""
+			document.getElementById("route_content").style.display = "none";
+			change();
+
+		}
 		if (event.which == 13) {
+			document.getElementById("route_content").style.display = "none";
 			change();
 			return false;
 		}
@@ -103,7 +115,7 @@ $(function () {
 
 /*----------首頁頁面----------*/
 //--抓資料庫--
-function cc(x) {
+function home(x) {
 	$.ajax({
 		type: 'GET',
 		url: './static/Home.json',
@@ -124,27 +136,13 @@ function cc(x) {
 		}
 	});
 }
-//--點擊tab--
+//--點擊hot--
 function changecontent(mytab) {
-	var tab = mytab.id;
-	cc(tab);
+	home(mytab.id);
 };
-//--自己生成tab--
+//--自己生成hot--
 $(function () {
-	var n
-	if ($("#hot1").css("opacity") == 1) {
-		n = "hot1"
-	}
-	if ($("#hot2").css("opacity") == 1) {
-		n = "hot2"
-	}
-	if ($("#hot3").css("opacity") == 1) {
-		n = "hot3"
-	}
-	if ($("#hot4").css("opacity") == 1) {
-		n = "hot4"
-	}
-	cc(n);
+	home("hot1");
 })
 
 /*----------熱門頁面----------*/
@@ -168,7 +166,7 @@ function attraction() {
 //--更新景點--
 function update() {
 	document.getElementById("load").style.display = "none";
-	document.getElementById("attraction_content").style.display = "block";
+	$('#attraction_content').fadeIn();
 	var cSearch = $("#c-search");
 	var value = $('#form-control').val();
 	if (!value) {
@@ -180,8 +178,8 @@ function update() {
 //--點擊預設景點--
 function area(area) {
 	document.getElementById("form-control").value = area.text
+	document.getElementById("attraction_content").style.display = "none";
 	update()
-
 }
 
 /*----------行程頁面----------*/
@@ -216,6 +214,7 @@ function route(myroute) {
 			});
 		}
 	});
+	$("#route_content").fadeIn(800)
 }
 function change() {
 	var rSearch = $("#route_search");
@@ -225,6 +224,8 @@ function change() {
 		return;
 	};
 	rSearch.html('.wrap:not([data-index*="' + value.toLowerCase() + '"]) {display: none;}');
+	$('#route_content').fadeIn();
+
 }
 var choosearea = [];
 
@@ -238,6 +239,7 @@ function choose(mychoose) {
 	else {
 		choosearea.remove(mychoose.id)
 	}
+	document.getElementById("route_content").style.display = "none";
 	route(choosearea)
 }
 Array.prototype.remove = function () {
@@ -260,22 +262,22 @@ $(document).ready(function () {
 	$('.closeBtn2').click(function (event) {
 		$('.showintro').fadeOut();
 	});
-	
+
 });
-function showin(id){
+function showin(id) {
 	// var mydiv = $('route_content');
 	// $('.wrapp').click(function (event) {
-		console.log(id)
-		// for (var i = 1; i <= 4; i++) {
-		//     var mydiv = $(".wrap");
-		//     // var myimg = document.getElementsByTagName("img");
-		//     // $(myimg[i]).attr('src', 'assets/im/A' + i + '.jpg');
-		//     $(mydiv).click(function (event) {
-		// var divclass = $(this).attr('id')
-		// var url = '.' + divclass + ' img';
-		// var bg = $(url).attr('src');
-		// $('.INTRO img').attr('src', bg);
-		$('.showintro').fadeIn();
-		// });
+	console.log(id)
+	// for (var i = 1; i <= 4; i++) {
+	//     var mydiv = $(".wrap");
+	//     // var myimg = document.getElementsByTagName("img");
+	//     // $(myimg[i]).attr('src', 'assets/im/A' + i + '.jpg');
+	//     $(mydiv).click(function (event) {
+	// var divclass = $(this).attr('id')
+	// var url = '.' + divclass + ' img';
+	// var bg = $(url).attr('src');
+	// $('.INTRO img').attr('src', bg);
+	$('.showintro').fadeIn();
+	// });
 	// })
 }

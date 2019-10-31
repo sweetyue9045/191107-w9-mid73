@@ -83,6 +83,7 @@ $(function () {
 		if (check == 0) {
 			$("#CheckAll").prop("checked", true)
 			choosearea = null
+			document.getElementById("route_content").style.display = "none";
 			route(choosearea)
 		}
 	});
@@ -90,10 +91,12 @@ $(function () {
 	$(".route_form_control").keydown(function (event) {
 		if ($(".route_form_control").val().length == 1 && event.which == 8) {
 			document.getElementById("route_form_control").value = ""
+			document.getElementById("route_content").style.display = "none";
 			change();
 
 		}
 		if (event.which == 13) {
+			document.getElementById("route_content").style.display = "none";
 			change();
 			return false;
 		}
@@ -108,7 +111,7 @@ $(function () {
 
 /*----------首頁頁面----------*/
 //--抓資料庫--
-function cc(x) {
+function home(x) {
 	$.ajax({
 		type: 'GET',
 		url: './static/Home.json',
@@ -131,12 +134,11 @@ function cc(x) {
 }
 //--點擊hot--
 function changecontent(mytab) {
-	var tab = mytab.id;
-	cc(tab);
+	home(mytab.id);
 };
 //--自己生成hot--
 $(function () {
-	cc("hot1");
+	home("hot1");
 })
 
 /*----------熱門頁面----------*/
@@ -208,6 +210,7 @@ function route(myroute) {
 			});
 		}
 	});
+	$("#route_content").fadeIn(800)
 }
 function change() {
 	var rSearch = $("#route_search");
@@ -217,6 +220,8 @@ function change() {
 		return;
 	};
 	rSearch.html('.wrap:not([data-index*="' + value.toLowerCase() + '"]) {display: none;}');
+	$('#route_content').fadeIn();
+
 }
 var choosearea = [];
 
@@ -230,6 +235,7 @@ function choose(mychoose) {
 	else {
 		choosearea.remove(mychoose.id)
 	}
+	document.getElementById("route_content").style.display = "none";
 	route(choosearea)
 }
 Array.prototype.remove = function () {

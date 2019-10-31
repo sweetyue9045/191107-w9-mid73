@@ -2,7 +2,7 @@
 var searchbar = 0;
 $(function () {
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 50) {
+		if ($(this).scrollTop() > 100) {
 			$('#backtotop').stop().animate({ bottom: "20px" });
 		}
 		else {
@@ -11,6 +11,13 @@ $(function () {
 	}).scroll();
 	$('#backtotop').click(function () { $('html,body').animate({ scrollTop: 0 }, 800); });
 	var slide = 0;
+	//----------首頁----------
+	//--輪播速度--
+	$('.carousel1').carousel({
+		interval: 2000
+	})
+
+	//----------景點----------
 	//--預設地點點擊--
 	$("#dropdown-toggle").click(function () {
 		$("#dropdown-menu").slideToggle("");
@@ -48,7 +55,7 @@ $(function () {
 			searchbar = 1;
 		}
 		else if (searchbar != 0) {
-			show();
+			update();
 		}
 	});
 	//--搜尋文字輸入--
@@ -58,13 +65,43 @@ $(function () {
 			document.getElementById("attraction_content").style.display = "none";
 		}
 		if (event.which == 13) {
-			show();
+			update();
+			return false;
 		}
 	});
 
+	//----------行程----------
+	//--選擇--
+	$("#CheckAll").click(function () {
+		$(".items:checkbox").prop("checked", false)
+	});
+
+	$(".items").click(function () {
+		$("#CheckAll").prop("checked", false)
+		var check = $("input[class='items']:checked").length
+		console.log(check)
+		if (check == 0) {
+			$("#CheckAll").prop("checked", true)
+			choosearea = null
+			route(choosearea)
+		}
+	});
+	//--搜尋文字輸入--
+	$(".route_form_control").keydown(function (event) {
+		if (event.which == 13) {
+			change();
+			return false;
+		}
+	});
+	$(".route_form_control").click(function () {
+		$(".items:checkbox").prop("checked", false)
+		$("#CheckAll").prop("checked", true)
+		choosearea = null
+		route(choosearea)
+	})
 });
 
-//----------首頁渲染----------
+/*----------首頁頁面----------*/
 //--抓資料庫--
 function cc(x) {
 	$.ajax({
@@ -110,7 +147,7 @@ $(function () {
 	cc(n);
 })
 
-//----------熱門渲染----------
+/*----------熱門頁面----------*/
 //--抓資料庫+渲染景點--
 function attraction() {
 	$.ajax({
@@ -121,29 +158,124 @@ function attraction() {
 			$.each(response, function (index, element) {
 				var a = element.length
 				for (i = 0; i < a; i++) {
-					var shops = element[i];
-					$("#attraction_content").append("<div class='wrap' data-index='" + shops.name + " " + shops.address + "'><div class='name'>" + shops.name + "</div>")
+					var attraction = element[i];
+					$("#attraction_content").append('<div class="wrap" data-index="' + attraction.name.toLowerCase() + ' ' + attraction.address + '"><div class="name">' + attraction.name + '</div>')
 				}
 			});
 		}
 	});
 }
 //--更新景點--
-function show() {
+function update() {
 	document.getElementById("load").style.display = "none";
 	document.getElementById("attraction_content").style.display = "block";
-
-	var mSearch = $("#m-search");
-	var value = $('.form-control').val();
+	var cSearch = $("#c-search");
+	var value = $('#form-control').val();
 	if (!value) {
-		mSearch.html("");
+		cSearch.html("");
 		return;
 	};
-	mSearch.html('.wrap:not([data-index*="' + value.toLowerCase() + '"]) {display: none;}');
+	cSearch.html('.wrap:not([data-index*="' + value.toLowerCase() + '"]) {display: none;}');
 }
 //--點擊預設景點--
 function area(area) {
 	document.getElementById("form-control").value = area.text
-	show()
+	update()
 
+}
+
+/*----------行程頁面----------*/
+//--抓資料庫+渲染行程--
+function route(myroute) {
+	$("#route_content").empty()
+	$.ajax({
+		type: 'GET',
+		url: '../static/route.json',
+		dataType: 'json',
+		success: function (response) {
+			$.each(response, function (index, element) {
+				var a = element.length
+				if (myroute != null) {
+					for (k = 0; k < choosearea.length; k++) {
+						area = response[myroute[k]];
+						if (index == myroute[k]) {
+							for (i = 0; i < a; i++) {
+								var route = area[i];
+								$("#route_content").append('<div class="wrap" data-index="' + route.area + '"><a class="name" id="' + route.area + '" onclick="showin(this)">' + route.area + '</a></div>')
+							}
+						}
+					}
+				}
+				if (myroute == null) {
+					for (i = 0; i < a; i++) {
+						var route = element[i];
+						$("#route_content").append('<div class="wrap" data-index="' + route.area + '"><a class="name" id="' + route.area + '" onclick="showin(this)">' + route.area + '</a></div>')
+					}
+					choosearea = []
+				}
+			});
+		}
+	});
+}
+function change() {
+	var rSearch = $("#route_search");
+	var value = $('#route_form_control').val();
+	if (!value) {
+		rSearch.html("");
+		return;
+	};
+	rSearch.html('.wrap:not([data-index*="' + value.toLowerCase() + '"]) {display: none;}');
+}
+var choosearea = [];
+
+function choose(mychoose) {
+	if (mychoose.checked) {
+		choosearea.push(mychoose.id);
+		if (mychoose.id == "CheckAll") {
+			choosearea = null
+		}
+	}
+	else {
+		choosearea.remove(mychoose.id)
+	}
+	route(choosearea)
+}
+Array.prototype.remove = function () {
+	var what, a = arguments, L = a.length, ax;
+	while (L && this.length) {
+		what = a[--L];
+		while ((ax = this.indexOf(what)) !== -1) {
+			this.splice(ax, 1);
+		}
+	}
+	return this;
+};
+
+/*----------介紹頁面----------*/
+$(document).ready(function () {
+	$('.showintro').hide();
+	$('.closeBtn1').click(function (event) {
+		$('.showintro').fadeOut();
+	});
+	$('.closeBtn2').click(function (event) {
+		$('.showintro').fadeOut();
+	});
+	
+});
+function showin(id){
+	// var mydiv = $('route_content');
+	// $('.wrapp').click(function (event) {
+		console.log(id)
+		// for (var i = 1; i <= 4; i++) {
+		//     var mydiv = $(".wrap");
+		//     // var myimg = document.getElementsByTagName("img");
+		//     // $(myimg[i]).attr('src', 'assets/im/A' + i + '.jpg');
+		//     $(mydiv).click(function (event) {
+		// var divclass = $(this).attr('id')
+		// var url = '.' + divclass + ' img';
+		// var bg = $(url).attr('src');
+		// $('.INTRO img').attr('src', bg);
+		$('.showintro').fadeIn();
+		// });
+	// })
 }

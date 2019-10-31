@@ -27,8 +27,6 @@
         <li><a href="index.html">首頁</a></li>
         <li><a href="html/attraction.html">景點</a></li>
         <li><a href="html/route.html">推薦行程</a></li>
-        <li><a href="">未定</a></li>
-        <li><a href="">未定</a></li>
       </ul>
     </nav>
     <div class="H_right">
@@ -117,23 +115,19 @@
     <div class="hot">
       <div class="hot_top">
         <div class="hot_title">熱門行程</div>
-        <div class="navtab">
-          <span id="tab-1" style="display: none;">1</span>
-          <span id="tab-2" style="display: none;">2</span>
-          <span id="tab-3" style="display: none;">3</span>
-          <span id="tab-4" style="display: none;">4</span>
-          <div id="tab">
-            <ul class="hot_nav">
-              <li class="tab-AA" id="hot1" onclick="changecontent(this)"
-                style="background-image: url(im/taichung.jpg);"><a href="#tab-1">台　<br>　中</a></li>
-              <li class="tab-BB" id="hot2" onclick="changecontent(this)" style="background-image: url(im/taipei.jpg);">
-                <a href="#tab-2">台　<br>　北</a></li>
-              <li class="tab-CC" id="hot3" onclick="changecontent(this)"
-                style="background-image: url(im/kaohsiung.jpg);"><a href="#tab-3">高　<br>　雄</a></li>
-              <li class="tab-DD" id="hot4" onclick="changecontent(this)" style="background-image: url(im/taoyuan.jpg);">
-                <a href="#tab-4">桃　<br>　園</a></li>
-            </ul>
-          </div>
+        <div class="hot_nav">
+            <input type="radio" class="hothot" name="hot" id="hot1" checked>
+            <label for="hot1" id="hot1" onclick="changecontent(this)" style="background-image: url(im/taichung.jpg);">
+              <span>台　<br>　中</span></label>
+            <input type="radio" class="hothot" name="hot" id="hot2">
+            <label for="hot2" id="hot2" onclick="changecontent(this)" style="background-image: url(im/taipei.jpg);">
+              <span>台　<br>　北</span></label>
+            <input type="radio" class="hothot" name="hot" id="hot3">
+            <label for="hot3" id="hot3" onclick="changecontent(this)" style="background-image: url(im/kaohsiung.jpg);">
+              <span>高　<br>　雄</span></label>
+            <input type="radio" class="hothot" name="hot" id="hot4">
+            <label for="hot4" id="hot4" onclick="changecontent(this)" style="background-image: url(im/taoyuan.jpg);">
+              <span>桃　<br>　園</span></label>
         </div>
       </div>
       <div class="hot_content">

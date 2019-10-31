@@ -240,23 +240,4 @@ input:checked + .choose:before {
 .closeBtn:hover {
   color: rgba(121, 121, 121, 0.6);
 }
-
-.route_content {
-  display: -ms-grid;
-  display: grid;
-}
-
-.wrapp {
-  outline: 1px solid #000;
-  width: 100px;
-  margin: 0;
-}
-
-.name:hover {
-  background-color: red;
-}
-
-.name:active {
-  background-color: blue;
-}
 /*# sourceMappingURL=route.css.map */

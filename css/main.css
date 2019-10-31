@@ -52,7 +52,7 @@ header {
           justify-content: space-between;
   width: 100%;
   background-color: var(--Dark);
-  padding: 13px 50px;
+  padding: 13px 100px;
 }
 
 header a {
@@ -62,15 +62,18 @@ header a {
 }
 
 .H_title {
-  width: 70px;
+  width: 10%;
   font-size: 20px;
-  padding: 1px 0 0 0;
 }
 
 .H_title a {
   font-family: "Arial Black";
   text-decoration: none;
   color: var(--NAV_F);
+}
+
+nav {
+  width: 75%;
 }
 
 .nav_bar {
@@ -80,8 +83,8 @@ header a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 900px;
-  margin: 3px 0 0 0;
+  width: 100%;
+  margin-top: 1.5px;
 }
 
 .nav_bar li {
@@ -98,8 +101,7 @@ header a {
 }
 
 .H_right {
-  margin: 5px 0 0 0;
-  width: 170px;
+  width: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,6 +111,7 @@ header a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 3px;
 }
 
 .H_line {

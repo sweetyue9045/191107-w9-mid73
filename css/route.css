@@ -98,7 +98,7 @@ input:checked + .choose:before {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  border-collapse: separate;
+  border-collapse: collapse;
   width: 200px;
   margin: 0;
 }

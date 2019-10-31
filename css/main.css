@@ -171,11 +171,11 @@ footer {
   position: fixed;
   bottom: -65px;
   right: 20px;
-  color: var(--Font);
-  opacity: 0.7;
+  color: var(--Dark);
+  opacity: 1;
 }
 
 #backtotop:hover {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 /*# sourceMappingURL=main.css.map */

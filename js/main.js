@@ -1,12 +1,16 @@
 //----------各種click----------
 var searchbar = 0;
 $(function () {
+	var top = $('.container').offset().top - 55
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 100) {
+		if ($(this).scrollTop() > top) {
 			$('#backtotop').stop().animate({ bottom: "20px" });
+			$(".home_header").attr("style", "background-color: var(--Dark)")
 		}
 		else {
 			$('#backtotop').stop().animate({ bottom: "-65px" });
+			$(".home_header").attr("style", "background-color: transparent ")
+
 		}
 	}).scroll();
 	$('#backtotop').click(function () { $('html,body').animate({ scrollTop: 0 }, 800); });

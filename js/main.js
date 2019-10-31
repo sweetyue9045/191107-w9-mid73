@@ -2,17 +2,25 @@
 var searchbar = 0;
 $(function () {
 	var top = $('.container').offset().top - 55
+	var down = $('footer').offset().top
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > top) {
-			$('#backtotop').stop().animate({ bottom: "20px" });
 			$(".home_header").attr("style", "background-color: var(--Dark)")
 		}
 		else {
-			$('#backtotop').stop().animate({ bottom: "-65px" });
 			$(".home_header").attr("style", "background-color: transparent ")
-
 		}
 	}).scroll();
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100){
+			if ($(this).scrollTop() < down-600) $('#backtotop').stop().animate({ bottom: "20px" });
+			else $('#backtotop').stop().animate({ bottom: "-65px" });
+			}
+		else {
+			$('#backtotop').stop().animate({ bottom: "-65px" });
+		}
+	}).scroll();
+	
 	$('#backtotop').click(function () { $('html,body').animate({ scrollTop: 0 }, 800); });
 	var slide = 0;
 	//----------首頁----------

@@ -165,6 +165,7 @@ header {
   outline: 2px solid var(--NAV_F);
   opacity: 0.5;
   background-size: cover;
+  cursor: pointer;
 }
 
 .hot_nav label:hover {
@@ -218,7 +219,7 @@ header {
 }
 
 .hot_content_title {
-  font-size: 17px;
+  font-size: 20px;
   line-height: 50px;
 }
 

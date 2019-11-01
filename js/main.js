@@ -263,7 +263,7 @@ Array.prototype.remove = function () {
 
 /*----------介紹頁面----------*/
 $(document).ready(function () {
-	$('.showintro').hide();
+	// $('.showintro').hide();
 	$('.closeBtn1').click(function (event) {
 		$('.showintro').fadeOut();
 	});

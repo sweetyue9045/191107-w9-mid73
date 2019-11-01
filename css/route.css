@@ -40,6 +40,10 @@ html, body {
   background-color: #fff;
 }
 
+.container {
+  min-height: 450px;
+}
+
 .choose_box {
   position: relative;
   display: -webkit-box;

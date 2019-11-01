@@ -42,11 +42,13 @@ html, body {
 
 .Carousel {
   width: 100%;
-  height: 40vw;
+  height: 38vw;
+  background-color: var(--Back);
+  padding: 40px 5% 0;
 }
 
 .input-group {
-  position: relative;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,7 +57,7 @@ html, body {
           align-items: flex-start;
   border-collapse: separate;
   width: 0px;
-  top: 50px;
+  top: 15%;
   left: 200px;
   margin: 0;
 }
@@ -67,8 +69,7 @@ html, body {
   padding: 10px 0px;
   font-size: 14px;
   color: #2c5155;
-  background-color: #fff;
-  background-image: none;
+  background-color: rgba(0, 0, 0, 0);
   border: 1px solid var(--Dark);
   border-left: 0px transparent;
   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
@@ -100,15 +101,10 @@ html, body {
   -ms-touch-action: manipulation;
       touch-action: manipulation;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  background-image: none;
   border: 1px solid var(--Dark);
   border-radius: 4px;
   color: #4c777c;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .search {
@@ -141,7 +137,7 @@ html, body {
   font-size: 14px;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: #ffffff91;
   background-clip: padding-box;
   border: 1px solid var(--Dark);
   border-radius: 4px;
@@ -163,45 +159,38 @@ html, body {
 }
 
 .dropdown-menu a:hover {
-  background-color: var(--Back);
+  background-color: #ffffffda;
 }
 
 .topbox {
   width: 100%;
-  height: 430px;
+  height: 100%;
   background-color: #bcdce6;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   border-radius: 4px;
-  position: absolute;
 }
 
 .bigcloud {
-  width: 900px;
-  height: 450px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin-top: -100px;
-  margin-left: 400px;
+  position: absolute;
+  width: 20%;
+  top: 12%;
+  right: 14%;
 }
 
 .smallcloud {
-  width: 200px;
-  height: 100px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin-top: 100px;
-  margin-left: -1200px;
+  position: absolute;
+  width: 17%;
+  top: 25%;
+  left: 8%;
 }
 
 .mountain {
-  width: 1000px;
-  height: 500px;
-  -o-object-fit: fill;
-     object-fit: fill;
-  margin-top: 7px;
-  margin-left: -220px;
+  position: absolute;
+  width: 80vw;
+  height: 23vw;
+  bottom: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .hotsite {
@@ -209,7 +198,6 @@ html, body {
   color: #062226;
   text-align: left;
   margin-left: 80px;
-  margin-top: 40px;
 }
 
 .phoint {
@@ -219,13 +207,13 @@ html, body {
   display: flex;
   -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
-  width: 860px;
-  height: 240px;
+  width: 77%;
+  height: 18.7vw;
   border-radius: 30px;
 }
 
 .floorhot {
-  width: 300px;
+  width: 35%;
   height: 100%;
   -o-object-fit: fill;
      object-fit: fill;
@@ -233,17 +221,20 @@ html, body {
 }
 
 .intbox {
-  width: 560px;
+  width: 65%;
   margin: 0;
   border-radius: 0 30px 30px 0;
   background-color: #fffffb;
 }
 
 .int {
-  font-size: 17px;
+  font-size: 16px;
   color: #273537;
-  padding: 20px 50px;
-  line-height: 40px;
+  top: 50%;
+  margin-left: 50px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  line-height: 34px;
 }
 
 .d-block {
@@ -254,18 +245,13 @@ html, body {
   width: 100%;
 }
 
-.carousel {
-  position: relative;
-}
-
 .carousel-inner {
-  position: relative;
   width: 100%;
+  height: 24vw;
   overflow: hidden;
 }
 
 .carousel-item {
-  position: relative;
   display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -326,60 +312,7 @@ html, body {
   }
 }
 
-.carousel-control-next, .carousel-control-prev {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 15%;
-  color: #fff;
-  text-align: center;
-  opacity: 0.5;
-}
-
-.carousel-control-next {
-  right: 0;
-}
-
-.carousel-control-next:focus, .carousel-control-next:hover {
-  color: #fff;
-  text-decoration: none;
-  outline: 0;
-  opacity: 0.9;
-}
-
-.carousel-control-prev {
-  left: 0;
-}
-
-.carousel-control-prev:focus, .carousel-control-prev:hover {
-  color: #fff;
-  text-decoration: none;
-  outline: 0;
-  opacity: 0.9;
-}
-
-.carousel-control-next-icon, .carousel-control-prev-icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: transparent no-repeat center center;
-  background-size: 100% 100%;
-}
-
 .carousel-indicators {
-  position: absolute;
-  right: 0;
-  bottom: 10px;
-  left: 0;
   z-index: 15;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -387,47 +320,20 @@ html, body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-left: 0;
-  margin-right: 15%;
-  margin-left: 15%;
   list-style: none;
 }
 
 .carousel-indicators li {
-  position: relative;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
-  width: 30px;
-  height: 3px;
-  margin-right: 3px;
-  margin-left: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 5px;
   text-indent: -999px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.carousel-indicators li::before {
-  position: absolute;
-  top: -10px;
-  left: 0;
-  display: inline-block;
-  width: 100%;
-  height: 10px;
-  content: "";
-}
-
-.carousel-indicators li::after {
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  display: inline-block;
-  width: 100%;
-  height: 10px;
-  content: "";
+  background-color: #6792983a;
 }
 
 .carousel-indicators .active {
-  background-color: #fff;
+  background-color: var(--Dark);
 }
 
 .loader,

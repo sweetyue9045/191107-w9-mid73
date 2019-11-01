@@ -25,22 +25,17 @@
         <nav>
             <ul class="nav_bar">
                 <li><a href="../index.html">首頁</a></li>
-                <li><a href="attraction.html">景點</a></li>
+                <li><a href="attraction.html">景點介紹</a></li>
                 <li><a href="route.html">推薦行程</a></li>
             </ul>
         </nav>
-        <div class="H_right">
-            <a href="" class="BTN">
-                <div>登入 / 註冊</div>
-            </a>
-            <div class="H_line"></div>
-            <a href="" class="BTN">
-                <div>Language</div>
-            </a>
-        </div>
     </header>
     <div class="Carousel">
-        <div class="box"></div>
+        <div class="topbox">
+            <img src="../im/雲.png" class="bigcloud" />
+            <img src="../im/雲.png" class="smallcloud" />
+            <img src="../im/山.png" class="mountain" />
+        </div>
         <div class="input-group" id="input-group">
             <div class="dropdown-btn" id="dropdown-btn">
                 <button type="button" class="btn dropdown-toggle" id="dropdown-toggle"
@@ -67,37 +62,72 @@
             <div class="loader" id="load"></div>
             <!-- 呼叫的後端資料 -->
             <div id="attraction_hot">
-                <img
-                    src="https://4.bp.blogspot.com/-jdGreROMIPs/XEKoh9IsHUI/AAAAAAAAHwU/z-85iqyPyfkxud0Uov1tsFI1fK9zuHVSQCK4BGAYYCw/s1600/%25E8%25B3%25BD%25E4%25BA%259E%25E4%25BA%25BA%25E5%2598%259F%25E5%2598%25B4.jpg">
+                <div class="hotsite">熱門景點</div>
+                <div class="hot">
+                    <div class="carousel slide" id="A1" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="d-block w-100" src="" alt="First slide">
+                                    <div class="phoint">
+                                        <img src="../im/地熱谷.png" class="floorhot" />
+                                        <div class="intbox">
+                                            <div class="int">
+                                                11地熱谷(地熱谷景觀公園)<br>
+                                                地址：臺北市北投區中山路<br>
+                                                週二～週日 09:00~17:00<br>
+                                                週一關園進行維護（如欲國定家日則照常開放）<br>
+                                                建議停留時間：60分鐘
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-block w-100" src="" alt="Second slide">
+                                    <div class="phoint">
+                                        <img src="../im/地熱谷.png" class="floorhot" />
+                                        <div class="intbox">
+                                            <div class="int">
+                                                22地熱谷(地熱谷景觀公園)<br>
+                                                地址：臺北市北投區中山路<br>
+                                                週二～週日 09:00~17:00<br>
+                                                週一關園進行維護（如欲國定家日則照常開放）<br>
+                                                建議停留時間：60分鐘
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="d-block w-100" src="" alt="Third slide">
+                                    <div class="phoint">
+                                        <img src="../im/地熱谷.png" class="floorhot" />
+                                        <div class="intbox">
+                                            <div class="int">
+                                                33地熱谷(地熱谷景觀公園)<br>
+                                                地址：臺北市北投區中山路<br>
+                                                週二～週日 09:00~17:00<br>
+                                                週一關園進行維護（如欲國定家日則照常開放）<br>
+                                                建議停留時間：60分鐘
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ol class="carousel-indicators">
+                            <li class="active" data-target="#A1" data-slide-to="0"></li>
+                            <li data-target="#A1" data-slide-to="1"></li>
+                            <li data-target="#A1" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+                </div>
             </div>
             <div class="attraction_content" id="attraction_content" style="outline: 1px solid black; display: none;">
             </div>
         </div>
-        <!-- <div class="hot">
-            <div class="carousel slide" id="A1" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active"><img class="d-block w-100" src="" alt="First slide" />1</div>
-                    <div class="carousel-item"><img class="d-block w-100" src="" alt="Second slide" />2</div>
-                    <div class="carousel-item"><img class="d-block w-100" src="" alt="Third slide" />3</div>
-                </div>
-                <ol class="carousel-indicators">
-                    <li class="active" data-target="#A1" data-slide-to="0"></li>
-                    <li data-target="#A1" data-slide-to="1"></li>
-                    <li data-target="#A1" data-slide-to="2"></li>
-                </ol>
-            </div>
-            <a class="carousel-control-prev" href="#A2" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true">
-                    <i class="fas fa-angle-left fa-2x"></i> </span>
-                <span class="sr-only">Previous
-                </span>
-            </a>
-            <a class="carousel-control-next" href="#A2" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true">
-                    <i class="fas fa-angle-right fa-2x"> </i> </span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div> -->
+
 
     </div>
     <footer>

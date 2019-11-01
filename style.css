@@ -1,0 +1,197 @@
+body {
+    margin:0;
+}
+
+.bg {
+    width: 1280px;
+    height: 1000px;
+    background-color: #ecf7f3;
+    position: relative;
+    margin: 0 auto;
+}
+
+.navbox1 {
+    width: 1280px;
+    height: 80px;
+    background-color: #679298;
+    display: flex;
+}
+
+.LOGO {
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    color: #f7fbfa;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 80px;
+    margin-top: 26px;
+}
+
+.site {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #f7fbfa;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.notyet1 {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #f7fbfa;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.notyet2 {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #f7fbfa;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.notyet3 {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #f7fbfa;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.navbox2 {
+    width: 1120px;
+    height: 430px;
+    background-color: #bcdce6;
+    display: flex;
+    margin-left: 80px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+.bigcloud {
+    width: 900px;
+    height: 450px;
+    object-fit: contain;
+    margin-top: -100px;
+    margin-left: 400px;
+}
+
+.smallcloud {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    margin-top: 100px;
+    margin-left: -1200px;
+}
+
+.mountain {
+    width: 1000px;
+    height: 500px;
+    object-fit: fill;
+    margin-top: 7px;
+    margin-left: -220px;
+}
+
+.hotsite {
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #062226;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 80px;
+    margin-top: 40px;
+}
+
+.phoint {
+    display: flex;
+}
+
+.floorhot {
+    width: 300px;
+    height: 240px;
+    object-fit: fill;
+    margin-top: 20px;
+    margin-left: 205px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: inline-block;
+    box-shadow: 0px 5px 7px 0px;
+}
+
+.intbox {
+    display: inline-block;
+    width: 560px;
+    height: 240px;
+    margin-top: 20px;
+    margin-left: 0px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #fffffb;
+    box-shadow: 0px 5px 7px 0px;
+}
+
+.int {
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #273537;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 10px;
+    line-height: 40px;
+}
+
+.footbox {
+    width: 1280px;
+    height: 120px;
+    background-color: #679298;
+    position: relative;
+    margin:0 auto;
+}
+
+.LOGObot {
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    color: #f7fbfa;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 1130px;
+    padding-top: 30px;
+}

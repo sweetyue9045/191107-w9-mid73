@@ -105,11 +105,12 @@ $(function () {
 			document.getElementById("route_form_control").value = ""
 			document.getElementById("route_content").style.display = "none";
 			change();
-
+			$('#route_content').fadeIn();
 		}
 		if (event.which == 13) {
 			document.getElementById("route_content").style.display = "none";
 			change();
+			$('#route_content').fadeIn();
 			return false;
 		}
 	});

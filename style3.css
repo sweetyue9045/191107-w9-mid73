@@ -1,0 +1,185 @@
+body {
+    margin:0;
+}
+
+.bg {
+    width: 1280px;
+    height: 1000px;
+    background-color: #ecf7f3;
+    position: relative;
+    margin: 0 auto;
+}
+
+.navbox1 {
+    width: 1280px;
+    height: 80px;
+    background-color: #679298;
+    display: flex;
+}
+
+.LOGO {
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    color: #f7fbfa;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 80px;
+    margin-top: 26px;
+}
+
+.site {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #f7fbfa;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.notyet1 {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #f7fbfa;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.notyet2 {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #f7fbfa;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.notyet3 {
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #f7fbfa;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.navbox2 {
+    width: 1280px;
+    height: 450px;
+    background-color: #bcdce6;
+    display: flex;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+.bigcloud {
+    width: 1000px;
+    height: 500px;
+    object-fit: contain;
+    margin-top: -130px;
+    margin-left: 550px;
+}
+
+.smallcloud {
+    width: 250px;
+    height: 150px;
+    object-fit: contain;
+    margin-top: 93px;
+    margin-left: -1450px;
+}
+
+.mountain {
+    width: 1200px;
+    height: 360px;
+    object-fit: fill;
+    margin-top: 90px;
+    margin-left: -290px;
+}
+
+.taipeisite {
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: #062226;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 80px;
+    margin-top: 40px;
+}
+
+.sitelist {
+    display: flex;
+}
+
+.phoint1 {
+    display: inline-block;
+}
+
+.floorhot {
+    width: 300px;
+    height: 250px;
+    object-fit: contain;
+    margin-top: 20px;
+    margin-left: 230px;
+}
+
+.intbox1 {
+    width: 300px;
+    height: 60px;
+    margin-top: -20px;
+    margin-left: 230px;
+    background-color: rgba( 14, 14, 14, 0.5);
+}
+
+.pfloorhot {
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: rgba( 247, 255, 252, 0.9);
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 30px;
+    padding-top: 17px;
+    display: inline-block;
+}
+
+.address1 {
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: rgba( 247, 255, 252, 0.9);
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 85px;
+    padding-top: 17px;
+    display: inline-block;
+}

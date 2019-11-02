@@ -52,7 +52,7 @@ header {
           justify-content: space-between;
   width: 100%;
   background-color: var(--Dark);
-  padding: 13px 100px;
+  padding: 8px 100px 5px;
 }
 
 header a {
@@ -63,13 +63,18 @@ header a {
 
 .H_title {
   width: 10%;
-  font-size: 20px;
+  padding: 0;
 }
 
 .H_title a {
   font-family: "Arial Black";
   text-decoration: none;
   color: var(--NAV_F);
+}
+
+.H_title img {
+  margin: 5px 0 0 0;
+  height: 30px;
 }
 
 nav {
@@ -133,9 +138,11 @@ footer {
 }
 
 .F_title {
-  font-size: 20px;
-  font-family: "Arial Black";
-  color: var(--NAV_F);
+  margin: 10px 0 0 0;
+}
+
+.F_title img {
+  height: 50px;
 }
 
 #backtotop {

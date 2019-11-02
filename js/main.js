@@ -118,6 +118,13 @@ $(function () {
 		choosearea = null
 		route(choosearea)
 	})
+	$('.showintro').hide();
+	$('.closeBtn1').click(function (event) {
+		$('.showintro').fadeOut();
+	});
+	$('.closeBtn2').click(function (event) {
+		$('.showintro').fadeOut();
+	});
 });
 
 /*----------首頁頁面----------*/
@@ -266,16 +273,6 @@ Array.prototype.remove = function () {
 };
 
 /*----------介紹頁面----------*/
-$(document).ready(function () {
-	// $('.showintro').hide();
-	$('.closeBtn1').click(function (event) {
-		$('.showintro').fadeOut();
-	});
-	$('.closeBtn2').click(function (event) {
-		$('.showintro').fadeOut();
-	});
-
-});
 function showin(id) {
 	// var mydiv = $('route_content');
 	// $('.wrapp').click(function (event) {

@@ -4,7 +4,7 @@ body {
 
 .bg {
     width: 1280px;
-    height: 1000px;
+    height: 1150px;
     background-color: #ecf7f3;
     position: relative;
     margin: 0 auto;
@@ -142,18 +142,44 @@ body {
 
 .floorhot {
     width: 300px;
-    height: 250px;
-    object-fit: contain;
-    margin-top: 20px;
+    height: 230px;
+    object-fit: fill;
+    margin-top: 30px;
     margin-left: 230px;
+    filter: contrast(90%);
+}
+
+.floorhover {
+    position: relative;
+}
+
+.floormask {
+    position: absolute;
+    opacity: 0;
+    width: 300px;
+    height: 230px;
+    background: rgba( 8, 8, 8, 0.6);
+    color: rgba( 247, 255, 252, 0.9);
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    margin-top: -235px;
+    margin-left: 230px;
+    line-height: 50px;
+}
+
+.floorhover:hover .floormask {
+    opacity:1;
 }
 
 .intbox1 {
     width: 300px;
     height: 60px;
-    margin-top: -20px;
+    margin-top: -5px;
     margin-left: 230px;
-    background-color: rgba( 14, 14, 14, 0.5);
+    background-color: rgba( 0, 0, 0, 0.5);
 }
 
 .pfloorhot {
@@ -182,4 +208,97 @@ body {
     margin-left: 85px;
     padding-top: 17px;
     display: inline-block;
+}
+
+.phoint2 {
+    display: inline-block;
+}
+
+.one {
+    width: 300px;
+    height: 230px;
+    object-fit: fill;
+    margin-top: 30px;
+    margin-left: 200px;
+}
+
+.onehover {
+    position: relative;
+}
+
+.onemask {
+    position: absolute;
+    opacity: 0;
+    width: 300px;
+    height: 230px;
+    background: rgba( 8, 8, 8, 0.6);
+    color: rgba( 247, 255, 252, 0.9);
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    margin-top: -235px;
+    margin-left: 200px;
+}
+
+.onehover:hover .onemask {
+    opacity: 1;
+}
+
+.intbox2 {
+    width: 300px;
+    height: 60px;
+    margin-top: -5px;
+    margin-left: 200px;
+    background-color: rgba( 0, 0, 0, 0.5);
+}
+
+.pone {
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: rgba( 247, 255, 252, 0.9);
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 18px;
+    display: inline-block;
+}
+
+.address2 {
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: rgba( 247, 255, 252, 0.9);
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    padding-left: 105px;
+    padding-top: 18px;
+    display: inline-block;
+}
+
+.footbox {
+    width: 1280px;
+    height: 120px;
+    background-color: #679298;
+    position: relative;
+    margin:0 auto;
+}
+
+.LOGObot {
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    color: #f7fbfa;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+    margin-left: 1130px;
+    padding-top: 30px;
 }

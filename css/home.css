@@ -210,11 +210,19 @@ header {
   letter-spacing: 1px;
   -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hot_content_left {
+  width: 45%;
+  height: 245px;
+  overflow: hidden;
 }
 
 .hot_content_right {
   left: 50px;
-  float: right;
   width: 55%;
 }
 
@@ -230,8 +238,10 @@ header {
 }
 
 .hot_content img {
-  width: 45%;
-  height: 245px;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .new {

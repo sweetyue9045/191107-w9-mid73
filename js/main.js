@@ -197,6 +197,7 @@ function update() {
 //--點擊預設景點--
 function area(area) {
 	document.getElementById("form-control").value = area.text
+	if(area.text=="全部") document.getElementById("form-control").value=""
 	document.getElementById("attraction_content").style.display = "none";
 	update()
 }

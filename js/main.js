@@ -12,24 +12,22 @@ $(function () {
 		}
 	}).scroll();
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > 100){
-			if ($(this).scrollTop() < down-600) $('#backtotop').stop().animate({ bottom: "20px" });
+		if ($(this).scrollTop() > 100) {
+			if ($(this).scrollTop() < down - 600) $('#backtotop').stop().animate({ bottom: "20px" });
 			else $('#backtotop').stop().animate({ bottom: "-65px" });
-			}
+		}
 		else {
 			$('#backtotop').stop().animate({ bottom: "-65px" });
 		}
 	}).scroll();
-	
+
 	$('#backtotop').click(function () { $('html,body').animate({ scrollTop: 0 }, 800); });
 	var slide = 0;
-	//----------首頁----------
-	//--輪播速度--
-	$('.carousel1').carousel({
-		interval: 2000
-	})
-
 	//----------景點----------
+	//--輪播速度--
+	$('.carousel').carousel({
+		interval: 3500
+	})
 	//--預設地點點擊--
 	$("#dropdown-toggle").click(function () {
 		$("#dropdown-menu").slideToggle("");
@@ -155,7 +153,7 @@ $(function () {
 })
 
 /*----------熱門頁面----------*/
-//--抓資料庫+渲染景點--
+--抓資料庫+渲染景點--
 function attraction() {
 	$.ajax({
 		type: 'GET',
@@ -166,7 +164,12 @@ function attraction() {
 				var a = element.length
 				for (i = 0; i < a; i++) {
 					var attraction = element[i];
-					$("#attraction_content").append('<div class="wrap" data-index="' + attraction.name.toLowerCase() + ' ' + attraction.address + '"><div class="name">' + attraction.name + '</div>')
+					$("#attraction_site").append('<div class="wrap attraction_intbox" data-index="' + attraction.name.toLowerCase() + ' ' + attraction.address + '"><div class="attraction_hover '+ attraction.name+'"><img src="'+attraction.img+'" /><div class="attraction_text"><div class="intbox_title">'+attraction.title+'</div><div class="intbox_address">'+attraction.area+'</div></div><div class="intbox_mask"><div class="intbox_mask_text">地址<br/>'+attraction.address+'<br/>開放時間<br/>'+attraction.time+'<br/>連絡電話<br/>'+attraction.phone+'</div></div></div></div>')
+					$(attraction.name).hover(function(){
+						$(".intbox_mask").css('opacity','1');
+						$(".attraction_text").css('bottom','-100px');
+
+						})
 				}
 			});
 		}

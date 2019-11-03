@@ -1,7 +1,13 @@
 {
     "northern": [
         {
-            "area": "keelung"
+            "title":"基隆一日遊",
+            "place":["龍貓公車亭","中正公園大佛"],
+            "img":["../im/龍貓公車亭.jpg","../im/中正公園大佛.jpg"],
+            "contents":["一個公車亭","一尊佛像"],
+            "map":["https://goo.gl/maps/HpSm2wd7X9DwrUzDA"],
+            "distance":["79 公尺"],
+            "area": "基隆"
         },
         {
             "area": "yilan"

@@ -169,16 +169,25 @@ input:checked + .choose:before {
   border-color: #4c777c;
 }
 
+.wrap {
+  cursor: pointer;
+}
+
 /*----------介紹頁面---------- */
 .showintro {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 25px 0;
+}
+
+.introback {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .INTRO {
@@ -188,6 +197,7 @@ input:checked + .choose:before {
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 2;
+  margin: 25px auto;
 }
 
 .intro_top {
@@ -252,25 +262,17 @@ input:checked + .choose:before {
   top: 0px;
 }
 
-.tourline1, .tourline2, .tourline3, .tourline4, .tourline5, .tourline6, .tourline7 {
-  position: relative;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0;
-  padding: 0 0 0 10px;
-  margin-bottom: 20px;
-  color: var(--Dark);
-  border-left: 4px solid var(--Dark);
-}
-
 .tourlineBox {
   border: 1px solid var(--Dark);
   border-radius: 20px;
   padding: 20px;
   margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.tourlineBox:before, .tourlineBox2017:before {
+.tourlineBox:before, .tourlineBox_distance:before {
   content: '';
   width: 35px;
   height: 1.5px;
@@ -281,15 +283,20 @@ input:checked + .choose:before {
 }
 
 .showintro img {
-  width: 100%;
+  width: 50%;
   height: 100%;
   display: block;
   top: 0;
   border-radius: 10px;
 }
 
-.tourlineSpotsRight {
-  padding: 20px;
+.tourlineSpots_Right {
+  width: 50%;
+  padding: 25px 0 25px 25px;
+}
+
+.tourlineSpots_title {
+  margin: 10px 0;
 }
 
 .distancebtn {

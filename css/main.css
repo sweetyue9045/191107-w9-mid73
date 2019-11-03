@@ -145,7 +145,7 @@ footer {
   height: 50px;
 }
 
-#backtotop {
+.backtotop {
   border-radius: 50%;
   display: scroll;
   position: fixed;
@@ -155,7 +155,7 @@ footer {
   opacity: 1;
 }
 
-#backtotop:hover {
+.backtotop:hover {
   opacity: 0.8;
 }
 /*# sourceMappingURL=main.css.map */

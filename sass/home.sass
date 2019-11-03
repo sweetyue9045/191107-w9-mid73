@@ -33,13 +33,55 @@ header
 .topCarousel
 	width: 100%
 	height: 48vw
-.test
+.TOP
 	position: fixed
 	width: 100%
+.text
+	width: 27vw
+	height: 13vw
+	padding: 45px 0
+	background-color: #e4e4e4ab
+	top: 45%
+	transform-origin: 50% 0%
+	opacity: 0
+	transform: translateY(-50%)
+	animation: run 1.5s linear
+	animation-fill-mode: forwards
+.first_text
+	width: 55%
+	overflow: hidden
+.first_text img
+	width: 100%
+	bottom: -40px
+	animation: run2 .5s 1.5s linear
+	animation-fill-mode: forwards
+.second_text
+	width: 65%
+	margin-top: 20px
+	overflow: hidden
 
+.second_text img
+	width: 100%
+	bottom: -40px
+	animation: run2 .5s 2s linear
+	animation-fill-mode: forwards
 .route
 	min-height: 50px
 	width: 96%
+@keyframes run
+		0%
+			opacity: 0
+
+		100%
+			opacity: 1
+
+@keyframes run2
+		0%
+			bottom: -40px
+
+		100%
+			bottom: 0px
+
 .route_box
     display: grid
     grid-template-columns: 32.5% 32.5% 32.5%
@@ -49,34 +91,37 @@ header
 .route_content
 	width: 100%
 	background-color: var(--UPBA)
-	padding: 20px 15px
+	padding: 15px
 	border-radius: 3px
-	cursor: pointer
 	box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2)
-	
-.route_content a 
-	text-decoration: none
 	color: var(--Font)
+	display: flex	
+
+.route_left
+	width: 25%
+	padding: 0 10px 0 10px
 .route_content img
-	float: left
 	height: 60px
 	width: 60px
 	border-radius: 50%
-	margin: 4px 10px 0 10px
 .route_right
-	padding: 0px 0 0px 5px
+	width: 75%
+	padding: 20px 0 20px 5px
 	min-height: 70px
-	float: left
 	letter-spacing: 1px
 	color: var(--Font)
 .route_title
 	font-size: 14px
+	text-overflow: ellipsis
+	white-space: nowrap
+	overflow: hidden
 .route_text
 	font-size: 12px
 	margin: 8px 0 0 0 
-.route_hashtag
-	font-size: 12px
-	margin: 8px 0 0 0
+	text-overflow: ellipsis
+	white-space: nowrap
+	overflow: hidden
+
 .hot
 	margin-top: 40px
 	min-height: 50px
@@ -196,7 +241,6 @@ header
 .new_img
 	width: 100%
 	height: 100%
-	// outline: 1px solid var(--Font)
 	overflow: hidden
 .new_img1
 	grid-column: span 2

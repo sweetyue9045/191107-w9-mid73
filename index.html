@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body onload="route()">
   <header class="home_header">
     <div class="H_title"><a href="index.html"><img src="im/LOGO-Dtrip-2.png" alt=""></a></div>
     <nav>
@@ -31,65 +31,18 @@
     </nav>
   </header>
   <div class="topCarousel">
-    <img class="test" src="im/test.jpg" alt="First slide" />
+    <img class="TOP" src="im/TOP.jpg" />
+    <div class="text">
+      <div class="first_text"><img src="im/台灣輕旅行.png" alt=""></div>
+      <div class="second_text"><img src="im/探訪.png" alt=""></div>
+
+    </div>
+
   </div>
   <div class="container">
     <div class="route">
-      <div class="route_box">
-        <div class="route_content">
-          <a href="">
-            <img src="im/route1.jpg" alt="">
-            <div class="route_right">
-              <div class="route_title">流汗的旅行</div>
-              <div class="route_text">炎炎夏日就是要去高雄玩，這次要去...</div>
-              <div class="route_hashtag">#高雄 #夏天 #一日遊</div>
-            </div>
-          </a></div>
-        <div class="route_content">
-          <a href="">
-            <img src="im/A1-0.jpg" alt="">
-            <div class="route_right">
-              <div class="route_title">流汗的旅行</div>
-              <div class="route_text">炎炎夏日就是要去高雄玩，這次要去...</div>
-              <div class="route_hashtag">#高雄 #夏天 #一日遊</div>
-            </div>
-          </a></div>
-        <div class="route_content">
-          <a href="">
-            <img src="im/A1-0.jpg" alt="">
-            <div class="route_right">
-              <div class="route_title">流汗的旅行</div>
-              <div class="route_text">炎炎夏日就是要去高雄玩，這次要去...</div>
-              <div class="route_hashtag">#高雄 #夏天 #一日遊</div>
-            </div>
-          </a></div>
-        <div class="route_content">
-          <a href="">
-            <img src="im/A1-0.jpg" alt="">
-            <div class="route_right">
-              <div class="route_title">流汗的旅行</div>
-              <div class="route_text">炎炎夏日就是要去高雄玩，這次要去...</div>
-              <div class="route_hashtag">#高雄 #夏天 #一日遊</div>
-            </div>
-          </a></div>
-        <div class="route_content">
-          <a href="">
-            <img src="im/A1-0.jpg" alt="">
-            <div class="route_right">
-              <div class="route_title">流汗的旅行</div>
-              <div class="route_text">炎炎夏日就是要去高雄玩，這次要去...</div>
-              <div class="route_hashtag">#高雄 #夏天 #一日遊</div>
-            </div>
-          </a></div>
-        <div class="route_content">
-          <a href="">
-            <img src="im/A1-0.jpg" alt="">
-            <div class="route_right">
-              <div class="route_title">流汗的旅行</div>
-              <div class="route_text">炎炎夏日就是要去高雄玩，這次要去...</div>
-              <div class="route_hashtag">#高雄 #夏天 #一日遊</div>
-            </div>
-          </a></div>
+      <div class="route_box" id="route_box">
+
       </div>
     </div>
     <div class="hot">
@@ -126,13 +79,13 @@
       <div class="new_title">旅圖新知</div>
       <div class="new_smalltitle">優惠無私分享</div>
       <div class="new_box">
-        <div class="new_img new_img1"> <img src="im/花蓮線-已處理2.png"/></div>
-        <div class="new_img new_img2"> <img src="im/阿妹茶樓-已處理2.png"/></div>
-        <div class="new_img new_img3"> <img src="im/東澳沙灘車-已處理2.png"/></div>
-        <div class="new_img new_img4"> <img src="im/花蓮海洋公園-已處理2.png"/></div>
-        <div class="new_img new_img5"> <img src="im/台中麗寶-已處理2.png"/></div>
-        <div class="new_img new_img6"> <img src="im/阿里山線-已處理2.png"/></div>
-        <div class="new_img new_img7"> <img src="im/侏羅紀-已處理2.png"/></div>
+        <div class="new_img new_img1"> <img src="im/花蓮線-已處理2.png" /></div>
+        <div class="new_img new_img2"> <img src="im/阿妹茶樓-已處理2.png" /></div>
+        <div class="new_img new_img3"> <img src="im/東澳沙灘車-已處理2.png" /></div>
+        <div class="new_img new_img4"> <img src="im/花蓮海洋公園-已處理2.png" /></div>
+        <div class="new_img new_img5"> <img src="im/台中麗寶-已處理2.png" /></div>
+        <div class="new_img new_img6"> <img src="im/阿里山線-已處理2.png" /></div>
+        <div class="new_img new_img7"> <img src="im/侏羅紀-已處理2.png" /></div>
       </div>
     </div>
   </div>
@@ -143,7 +96,7 @@
     </div>
     <div class="F_title"><img src="im/LOGO-Dtrip.png" alt=""></div>
   </footer>
-  <a id="backtotop" title="返回頂部"><i class="fas fa-chevron-circle-up fa-3x" alt="Back to Top"></i></a>
+  <a class="backtotop" id="backtotop"><i class="fas fa-chevron-circle-up fa-3x"></i></a>
 </body>
 
 </html>

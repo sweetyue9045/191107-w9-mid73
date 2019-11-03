@@ -20,7 +20,14 @@ $(function () {
 			$('#backtotop').stop().animate({ bottom: "-65px" });
 		}
 	}).scroll();
-
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 1) {
+			$('#backtoroute').stop().animate({ bottom: "20px" });
+		}
+		else {
+			$('#backtoroute').stop().animate({ bottom: "-65px" });
+		}
+	}).scroll();
 	$('#backtotop').click(function () { $('html,body').animate({ scrollTop: 0 }, 800); });
 	var slide = 0;
 	//----------景點----------
@@ -217,7 +224,7 @@ function route(myroute) {
 						if (index == myroute[k]) {
 							for (i = 0; i < a; i++) {
 								var route = area[i];
-								$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)">' + route.title + '</a></div>')
+								$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)"><div class="wrap_img"><img src="../' + route.img[1] + '" alt=""></div><div class="wrap_text">' + route.title + '</br>' + route.route + '</div></a></div>')
 							}
 						}
 					}
@@ -225,7 +232,10 @@ function route(myroute) {
 				if (myroute == null) {
 					for (i = 0; i < a; i++) {
 						var route = element[i];
-						$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)">' + route.title + '</a></div>')
+						$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)"><div class="wrap_img"><img src="../' + route.img[1] + '" alt=""></div><div class="wrap_text"><div class="wrap_title">' + route.title + '</div><div class="wrap_route">' + route.route + '</div></div></a></div>')
+						if (i < 5) {
+							$("#route_box").append('<div class="route_content"><div class="route_left"><img src="' + route.img[1] + '" alt=""></div><div class="route_right"><div class="route_title">' + route.title + '</div><div class="route_text">' + route.route + '</div></div></div>')
+						}
 					}
 					choosearea = []
 				}
@@ -275,6 +285,7 @@ function choose(mychoose) {
 /*----------介紹頁面----------*/
 function showin(id) {
 	$(".tourline").empty()
+	$(".intro_intro").empty()
 	$.ajax({
 		type: 'GET',
 		url: '../static/route.json',
@@ -285,8 +296,9 @@ function showin(id) {
 				for (i = 0; i < a; i++) {
 					if (element[i].title == id.id) {
 						var b = element[i].place.length
+						$(".intro_intro").append('<div class="tourline_title">'+element[i].title+'</div><div class="tourline_intro">'+element[i].intro+'</div>')
 						for (x = 0; x < b; x++) {
-							$(".tourline").append('<div class="tourlineBox"><img src="' + element[i].img[x] + '"><div class="tourlineSpots_Right"><div class="tourlineSpots_title">' + element[i].place[x] + '</div>' + element[i].contents[x] + '</div></div>')
+							$(".tourline").append('<div class="tourlineBox"><img src="../' + element[i].img[x] + '"><div class="tourlineSpots_Right"><div class="tourlineSpots_title">' + element[i].place[x] + '</div>' + element[i].contents[x] + '</div></div>')
 							if (x < b - 1) {
 								$(".tourline").append('<div class="tourlineBox_distance"><div class="distancebtn"><i class="fas fa-map-marker-alt"></i><a href="' + element[i].map[x] + '" target="_blank">  兩點距離：' + element[i].distance[x] + '</a></div></div>')
 							}
@@ -297,7 +309,6 @@ function showin(id) {
 			})
 		}
 	})
-	console.log(id.id)
 	$('.showintro').fadeIn();
 }
 

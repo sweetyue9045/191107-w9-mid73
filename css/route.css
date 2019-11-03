@@ -42,56 +42,26 @@ html, body {
 
 .container {
   min-height: 450px;
-}
-
-.choose_box {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-collapse: separate;
-  width: 400px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.container_left {
+  width: 30%;
   margin: 0;
 }
 
-.choose_box input {
-  display: none;
+.route_content {
+  width: 70%;
+  margin: 0;
 }
 
-label {
-  margin: 2px;
-  height: 23px;
-}
-
-.choose {
-  left: 0px;
-  width: 15px;
-  height: 15px;
-  border: 2px solid var(--Dark);
-  border-radius: 50%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.choose:before {
-  position: absolute;
-  content: "";
-  left: 2.5px;
-  top: 2.5px;
-  opacity: 0;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--Dark);
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-input:checked + .choose:before {
-  opacity: 1;
+.wrap {
+  cursor: pointer;
 }
 
 .route_input_group {
@@ -169,8 +139,54 @@ input:checked + .choose:before {
   border-color: #4c777c;
 }
 
-.wrap {
-  cursor: pointer;
+.choose_box {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-collapse: separate;
+  width: 400px;
+  margin: 0;
+}
+
+.choose_box input {
+  display: none;
+}
+
+label {
+  margin: 2px;
+  height: 23px;
+}
+
+.choose {
+  left: 0px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--Dark);
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.choose:before {
+  position: absolute;
+  content: "";
+  left: 2.5px;
+  top: 2.5px;
+  opacity: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--Dark);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+input:checked + .choose:before {
+  opacity: 1;
 }
 
 /*----------介紹頁面---------- */
@@ -262,6 +278,37 @@ input:checked + .choose:before {
   top: 0px;
 }
 
+.tourArticle::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: var(--Font);
+  position: absolute;
+  left: 19.5px;
+  bottom: -30px;
+}
+
+.tourtitle {
+  color: var(--Font);
+  left: -8px;
+  padding-bottom: 5px;
+  z-index: 10;
+}
+
+.tourtitle::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: var(--Font);
+  position: absolute;
+  left: 27.5px;
+  bottom: -10px;
+}
+
 .tourlineBox {
   border: 1px solid var(--Dark);
   border-radius: 20px;
@@ -292,10 +339,11 @@ input:checked + .choose:before {
 
 .tourlineSpots_Right {
   width: 50%;
-  padding: 25px 0 25px 25px;
+  padding: 0 0 0 25px;
 }
 
 .tourlineSpots_title {
+  font-size: 20px;
   margin: 10px 0;
 }
 

@@ -217,7 +217,7 @@ function route(myroute) {
 						if (index == myroute[k]) {
 							for (i = 0; i < a; i++) {
 								var route = area[i];
-								$("#route_content").append('<div class="wrap" data-index="' + route.title + '"><a class="name" id="' + route.title + '" onclick="showin(this)">' + route.title + '</a></div>')
+								$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)">' + route.title + '</a></div>')
 							}
 						}
 					}
@@ -225,7 +225,7 @@ function route(myroute) {
 				if (myroute == null) {
 					for (i = 0; i < a; i++) {
 						var route = element[i];
-						$("#route_content").append('<div class="wrap" data-index="' + route.title + '"><a class="name" id="' + route.title + '" onclick="showin(this)">' + route.title + '</a></div>')
+						$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)">' + route.title + '</a></div>')
 					}
 					choosearea = []
 				}
@@ -248,6 +248,16 @@ function change() {
 var choosearea = [];
 
 function choose(mychoose) {
+	Array.prototype.remove = function () {
+		var what, a = arguments, L = a.length, ax;
+		while (L && this.length) {
+			what = a[--L];
+			while ((ax = this.indexOf(what)) !== -1) {
+				this.splice(ax, 1);
+			}
+		}
+		return this;
+	}
 	if (mychoose.checked) {
 		choosearea.push(mychoose.id);
 		if (mychoose.id == "CheckAll") {
@@ -260,16 +270,7 @@ function choose(mychoose) {
 	document.getElementById("route_content").style.display = "none";
 	route(choosearea)
 }
-Array.prototype.remove = function () {
-	var what, a = arguments, L = a.length, ax;
-	while (L && this.length) {
-		what = a[--L];
-		while ((ax = this.indexOf(what)) !== -1) {
-			this.splice(ax, 1);
-		}
-	}
-	return this;
-};
+
 
 /*----------介紹頁面----------*/
 function showin(id) {
@@ -282,11 +283,12 @@ function showin(id) {
 			$.each(response, function (index, element) {
 				var a = element.length
 				for (i = 0; i < a; i++) {
-					if (element[i].area == id.id) {
+					if (element[i].title == id.id) {
 						var b = element[i].place.length
 						for (x = 0; x < b; x++) {
-							$(".tourline").append('<div class="tourlineBox"><img src="'+element[i].img[x]+'"><div class="tourlineSpots_Right"><div class="tourlineSpots_title">'+element[i].place[x]+'</div>'+element[i].contents[x]+'</div></div>')
-							if(x<b-1){$(".tourline").append('<div class="tourlineBox_distance"><div class="distancebtn"><i class="fas fa-map-marker-alt"></i><a href="'+element[i].map[x]+'" target="_blank">兩點距離：'+element[i].distance[x]+'</a></div></div>')
+							$(".tourline").append('<div class="tourlineBox"><img src="' + element[i].img[x] + '"><div class="tourlineSpots_Right"><div class="tourlineSpots_title">' + element[i].place[x] + '</div>' + element[i].contents[x] + '</div></div>')
+							if (x < b - 1) {
+								$(".tourline").append('<div class="tourlineBox_distance"><div class="distancebtn"><i class="fas fa-map-marker-alt"></i><a href="' + element[i].map[x] + '" target="_blank">  兩點距離：' + element[i].distance[x] + '</a></div></div>')
 							}
 						}
 					}

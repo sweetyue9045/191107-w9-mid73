@@ -26,39 +26,46 @@ html,body
 	height: 100%
 	background-color: #fff
 .container
+	padding: 50px 120px 50px 120px
+
 	min-height: 450px
-.choose_box
-	position: relative 
 	display: flex
-	align-items: center
-	border-collapse: separate 
-	width: 400px
+	align-items: flex-start
+.container_left
+	width: 30%
 	margin: 0
-.choose_box input
-	display: none
-label
-	margin: 2px 
-	height: 23px
-.choose
-	left: 0px
-	width: 15px
-	height: 15px
-	border: 2px solid var(--Dark)
-	border-radius: 50%
-	box-sizing: border-box
-.choose:before
-	position: absolute
-	content: ""
-	left: 2.5px
-	top: 2.5px
-	opacity: 0
-	width: 6px
-	height: 6px
-	border-radius: 50%
-	background-color: var(--Dark)
-	transition: all .3s
-input:checked + .choose:before
-	opacity: 1
+.container_right
+	width: 70%
+	margin: 0
+	color: var(--Font)
+
+.site_title
+	font-size: 20px
+	text-align: left
+
+.wrap
+	cursor: pointer
+	height: 170px
+.wrap a
+	height: 100%
+	margin: 20px 0 0 0
+	display: flex
+	align-items: flex-start 
+.wrap_img
+	height: 100%
+	width: 40%
+	overflow: hidden
+.wrap_img img
+	width: 100%
+.wrap_text
+	width: 60%
+	margin: 0px
+	padding: 0 0 0 20px
+.wrap_title
+	font-size: 16px
+.wrap_route
+	font-size: 14px
+	padding: 10px 0 0 5px
 
 
 //----------Search CSS----------
@@ -68,8 +75,8 @@ input:checked + .choose:before
 	display: flex
 	align-items: flex-start 
 	border-collapse: collapse
-	width: 200px
-	margin: 0
+	width: 250px
+	margin: 0 0 10px 0
 .route_form_control
 	width: 100%
 	height: 34px 
@@ -115,7 +122,43 @@ input:checked + .choose:before
 	background-image: none 
 	background-color: #4c777c
 	border-color: #4c777c
-			
+
+.choose_box
+	position: relative 
+	display: flex
+	align-items: center
+	border-collapse: separate 
+	width: 400px
+	font-size: 14px
+	margin: 0
+.choose_box input
+	display: none
+label
+	margin: 2px 
+	height: 23px
+	color: var(--Dark)
+
+.choose
+	left: 0px
+	top: -1.5px
+	width: 13px
+	height: 13px
+	border: 2px solid var(--Dark)
+	border-radius: 50%
+	box-sizing: border-box
+.choose:before
+	position: absolute
+	content: ""
+	left: 2.1px
+	top: 2.1px
+	opacity: 0
+	width: 5px
+	height: 5px
+	border-radius: 50%
+	background-color: var(--Dark)
+	transition: all .3s
+input:checked + .choose:before
+	opacity: 1
 
 /*----------介紹頁面----------
 
@@ -123,11 +166,17 @@ input:checked + .choose:before
 	position: fixed
 	width: 100%
 	height: 100vh
-	background-color: rgba(0, 0, 0, 0.5)
 	z-index: 1
 	overflow-y: auto
 	overflow-x: hidden
-	padding: 25px 0
+.showintro::-webkit-scrollbar 
+    display: none
+
+.introback
+	position: fixed
+	width: 100%
+	height: 100vh
+	background-color: rgba(0, 0, 0, 0.5)
 
 .INTRO
 	position: relative
@@ -136,7 +185,8 @@ input:checked + .choose:before
 	border-radius: 20px
 	background-color: rgba(255, 255, 255, 0.8)
 	z-index: 2
-
+	margin: 25px auto
+	color: var(--Font)
 .intro_top
 	position: relative
 	width: 100%
@@ -172,8 +222,14 @@ input:checked + .choose:before
 
 .closeBtn:hover
 	color: rgba(121, 121, 121, 0.6)
-
-
+.intro_intro
+	text-align: center
+.tourline_title
+	font-size: 20px
+.tourline_intro
+	margin: 10px auto 20px
+	width: 70%
+	font-size: 14px
 .tourArticle
 	padding-left: 60px
 	margin-bottom: 50px
@@ -188,25 +244,38 @@ input:checked + .choose:before
 	position: absolute
 	left: calc((50px - 2px)/2)
 	top: 0px
-
-.tourline1, .tourline2, .tourline3, .tourline4, .tourline5, .tourline6, .tourline7
-	position: relative
-	font-size: 20px
-	font-weight: bold
-	margin: 0
-	padding: 0 0 0 10px 
-	margin-bottom: 20px
-	color: var(--Dark)
-	border-left: 4px solid var(--Dark)
-
-
+.tourArticle::after 
+    content: ''
+    display: block
+    width: 10px
+    height: 10px
+    border-radius: 100%
+    background-color: var(--Font)
+    position: absolute
+    left: 19.5px
+    bottom: -30px
+.tourtitle
+	left: -8px
+	padding-bottom: 5px 
+	z-index: 10
+.tourtitle::after
+    content: ''
+    display: block
+    width: 10px
+    height: 10px
+    border-radius: 100%
+    background-color: var(--Font)
+    position: absolute
+    left: 27.5px
+    bottom: -10px
 .tourlineBox
 	border: 1px solid var(--Dark)
 	border-radius: 20px
 	padding: 20px
 	margin: 20px 0
+	display: flex
 
-.tourlineBox:before, .tourlineBox2017:before
+.tourlineBox:before, .tourlineBox_distance:before
 	content: ''
 	width: 35px
 	height: 1.5px
@@ -216,16 +285,19 @@ input:checked + .choose:before
 	top: 50%
 
 .showintro img
-	width: 100%
+	width: 50%
 	height: 100%
 	display: block
 	top: 0
 	border-radius: 10px
 
 
-.tourlineSpotsRight
-	padding: 20px
-
+.tourlineSpots_Right
+	width: 50%
+	padding: 0 0 0 25px
+.tourlineSpots_title
+	font-size: 20px
+	margin: 10px 0 
 .distancebtn
 	display: inline-block
 	color: var(--Dark)

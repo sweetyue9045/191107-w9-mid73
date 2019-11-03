@@ -20,7 +20,14 @@ $(function () {
 			$('#backtotop').stop().animate({ bottom: "-65px" });
 		}
 	}).scroll();
-
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 1) {
+			$('#backtoroute').stop().animate({ bottom: "20px" });
+		}
+		else {
+			$('#backtoroute').stop().animate({ bottom: "-65px" });
+		}
+	}).scroll();
 	$('#backtotop').click(function () { $('html,body').animate({ scrollTop: 0 }, 800); });
 	var slide = 0;
 	//----------景點----------
@@ -119,6 +126,9 @@ $(function () {
 		route(choosearea)
 	})
 	$('.showintro').hide();
+	$('.introback').click(function (event) {
+		$('.showintro').fadeOut();
+	});
 	$('.closeBtn1').click(function (event) {
 		$('.showintro').fadeOut();
 	});
@@ -160,7 +170,7 @@ $(function () {
 })
 
 /*----------熱門頁面----------*/
---抓資料庫+渲染景點--
+--抓資料庫 + 渲染景點--
 function attraction() {
 	$.ajax({
 		type: 'GET',
@@ -171,12 +181,7 @@ function attraction() {
 				var a = element.length
 				for (i = 0; i < a; i++) {
 					var attraction = element[i];
-					$("#attraction_site").append('<div class="wrap attraction_intbox" data-index="' + attraction.name.toLowerCase() + ' ' + attraction.address + '"><div class="attraction_hover '+ attraction.name+'"><img src="'+attraction.img+'" /><div class="attraction_text"><div class="intbox_title">'+attraction.title+'</div><div class="intbox_address">'+attraction.area+'</div></div><div class="intbox_mask"><div class="intbox_mask_text">地址<br/>'+attraction.address+'<br/>開放時間<br/>'+attraction.time+'<br/>連絡電話<br/>'+attraction.phone+'</div></div></div></div>')
-					$(attraction.name).hover(function(){
-						$(".intbox_mask").css('opacity','1');
-						$(".attraction_text").css('bottom','-100px');
-
-						})
+					$("#attraction_site").append('<div class="wrap attraction_intbox" data-index="' + attraction.name.toLowerCase() + ' ' + attraction.address + '"><div class="attraction_hover ' + attraction.name + '"><img src="' + attraction.img + '" /><div class="attraction_text"><div class="intbox_title">' + attraction.title + '</div><div class="intbox_address">' + attraction.area + '</div></div><div class="intbox_mask"><div class="intbox_mask_text">地址<br/>' + attraction.address + '<br/>開放時間<br/>' + attraction.time + '<br/>連絡電話<br/>' + attraction.phone + '</div></div></div></div>')
 				}
 			});
 		}
@@ -197,7 +202,7 @@ function update() {
 //--點擊預設景點--
 function area(area) {
 	document.getElementById("form-control").value = area.text
-	if(area.text=="全部") document.getElementById("form-control").value=""
+	if (area.text == "全部") document.getElementById("form-control").value = ""
 	document.getElementById("attraction_content").style.display = "none";
 	update()
 }
@@ -219,7 +224,7 @@ function route(myroute) {
 						if (index == myroute[k]) {
 							for (i = 0; i < a; i++) {
 								var route = area[i];
-								$("#route_content").append('<div class="wrap" data-index="' + route.area + '"><a class="name" id="' + route.area + '" onclick="showin(this)">' + route.area + '</a></div>')
+								$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)"><div class="wrap_img"><img src="../' + route.img[1] + '" alt=""></div><div class="wrap_text">' + route.title + '</br>' + route.route + '</div></a></div>')
 							}
 						}
 					}
@@ -227,7 +232,10 @@ function route(myroute) {
 				if (myroute == null) {
 					for (i = 0; i < a; i++) {
 						var route = element[i];
-						$("#route_content").append('<div class="wrap" data-index="' + route.area + '"><a class="name" id="' + route.area + '" onclick="showin(this)">' + route.area + '</a></div>')
+						$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)"><div class="wrap_img"><img src="../' + route.img[1] + '" alt=""></div><div class="wrap_text"><div class="wrap_title">' + route.title + '</div><div class="wrap_route">' + route.route + '</div></div></a></div>')
+						if (i < 5) {
+							$("#route_box").append('<div class="route_content"><div class="route_left"><img src="' + route.img[1] + '" alt=""></div><div class="route_right"><div class="route_title">' + route.title + '</div><div class="route_text">' + route.route + '</div></div></div>')
+						}
 					}
 					choosearea = []
 				}
@@ -250,6 +258,16 @@ function change() {
 var choosearea = [];
 
 function choose(mychoose) {
+	Array.prototype.remove = function () {
+		var what, a = arguments, L = a.length, ax;
+		while (L && this.length) {
+			what = a[--L];
+			while ((ax = this.indexOf(what)) !== -1) {
+				this.splice(ax, 1);
+			}
+		}
+		return this;
+	}
 	if (mychoose.checked) {
 		choosearea.push(mychoose.id);
 		if (mychoose.id == "CheckAll") {
@@ -262,32 +280,35 @@ function choose(mychoose) {
 	document.getElementById("route_content").style.display = "none";
 	route(choosearea)
 }
-Array.prototype.remove = function () {
-	var what, a = arguments, L = a.length, ax;
-	while (L && this.length) {
-		what = a[--L];
-		while ((ax = this.indexOf(what)) !== -1) {
-			this.splice(ax, 1);
-		}
-	}
-	return this;
-};
+
 
 /*----------介紹頁面----------*/
 function showin(id) {
-	// var mydiv = $('route_content');
-	// $('.wrapp').click(function (event) {
-	console.log(id)
-	// for (var i = 1; i <= 4; i++) {
-	//     var mydiv = $(".wrap");
-	//     // var myimg = document.getElementsByTagName("img");
-	//     // $(myimg[i]).attr('src', 'assets/im/A' + i + '.jpg');
-	//     $(mydiv).click(function (event) {
-	// var divclass = $(this).attr('id')
-	// var url = '.' + divclass + ' img';
-	// var bg = $(url).attr('src');
-	// $('.INTRO img').attr('src', bg);
+	$(".tourline").empty()
+	$(".intro_intro").empty()
+	$.ajax({
+		type: 'GET',
+		url: '../static/route.json',
+		dataType: 'json',
+		success: function (response) {
+			$.each(response, function (index, element) {
+				var a = element.length
+				for (i = 0; i < a; i++) {
+					if (element[i].title == id.id) {
+						var b = element[i].place.length
+						$(".intro_intro").append('<div class="tourline_title">'+element[i].title+'</div><div class="tourline_intro">'+element[i].intro+'</div>')
+						for (x = 0; x < b; x++) {
+							$(".tourline").append('<div class="tourlineBox"><img src="../' + element[i].img[x] + '"><div class="tourlineSpots_Right"><div class="tourlineSpots_title">' + element[i].place[x] + '</div>' + element[i].contents[x] + '</div></div>')
+							if (x < b - 1) {
+								$(".tourline").append('<div class="tourlineBox_distance"><div class="distancebtn"><i class="fas fa-map-marker-alt"></i><a href="' + element[i].map[x] + '" target="_blank">  兩點距離：' + element[i].distance[x] + '</a></div></div>')
+							}
+						}
+					}
+				}
+
+			})
+		}
+	})
 	$('.showintro').fadeIn();
-	// });
-	// })
 }
+

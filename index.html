@@ -6,8 +6,6 @@
   <title>首頁丨Dtrip</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/home.css" />
 
@@ -16,10 +14,12 @@
   <script src="js/main.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/cd8e6a98a4.js" crossorigin="anonymous"></script>
+
 
 </head>
 
-<body>
+<body onload="route()">
   <header class="home_header">
     <div class="H_title"><a href="index.html"><img src="im/LOGO-Dtrip-2.png" alt=""></a></div>
     <nav>
@@ -30,91 +30,44 @@
       </ul>
     </nav>
   </header>
-  <div class="topCarousel" >
-      <img class="test" src="im/test.jpg" alt="First slide" />
+  <div class="topCarousel">
+    <img class="TOP" src="im/TOP.jpg" />
+    <div class="text">
+      <div class="first_text"><img src="im/台灣輕旅行.png" alt=""></div>
+      <div class="second_text"><img src="im/探訪.png" alt=""></div>
+
+    </div>
+
   </div>
   <div class="container">
     <div class="route">
-      <div class="route_box">
-        <div class="route_content">
-          <a href="">
-            <img src="im/route1.jpg" alt="">
-            <div class="route_right">
-              <div class="route_title">流汗的旅行</div>
-              <div class="route_text">炎炎夏日就是要去高雄玩，這次要去...</div>
-              <div class="route_hashtag">#高雄 #夏天 #一日遊</div>
-            </div>
-          </a></div>
-        <div class="route_content">
-          <a href="">
-            <img src="im/A1-0.jpg" alt="">
-            <div class="route_right">
-              <div class="route_title">流汗的旅行</div>
-              <div class="route_text">炎炎夏日就是要去高雄玩，這次要去...</div>
-              <div class="route_hashtag">#高雄 #夏天 #一日遊</div>
-            </div>
-          </a></div>
-        <div class="route_content">
-          <a href="">
-            <img src="im/A1-0.jpg" alt="">
-            <div class="route_right">
-              <div class="route_title">流汗的旅行</div>
-              <div class="route_text">炎炎夏日就是要去高雄玩，這次要去...</div>
-              <div class="route_hashtag">#高雄 #夏天 #一日遊</div>
-            </div>
-          </a></div>
-        <div class="route_content">
-          <a href="">
-            <img src="im/A1-0.jpg" alt="">
-            <div class="route_right">
-              <div class="route_title">流汗的旅行</div>
-              <div class="route_text">炎炎夏日就是要去高雄玩，這次要去...</div>
-              <div class="route_hashtag">#高雄 #夏天 #一日遊</div>
-            </div>
-          </a></div>
-        <div class="route_content">
-          <a href="">
-            <img src="im/A1-0.jpg" alt="">
-            <div class="route_right">
-              <div class="route_title">流汗的旅行</div>
-              <div class="route_text">炎炎夏日就是要去高雄玩，這次要去...</div>
-              <div class="route_hashtag">#高雄 #夏天 #一日遊</div>
-            </div>
-          </a></div>
-        <div class="route_content">
-          <a href="">
-            <img src="im/A1-0.jpg" alt="">
-            <div class="route_right">
-              <div class="route_title">流汗的旅行</div>
-              <div class="route_text">炎炎夏日就是要去高雄玩，這次要去...</div>
-              <div class="route_hashtag">#高雄 #夏天 #一日遊</div>
-            </div>
-          </a></div>
+      <div class="route_box" id="route_box">
+
       </div>
     </div>
     <div class="hot">
       <div class="hot_top">
         <div class="hot_title">熱門行程</div>
         <div class="hot_nav">
-            <input type="radio" class="hothot" name="hot" id="hot1" checked>
-            <label for="hot1" id="hot1" onclick="changecontent(this)" style="background-image: url(im/taichung.jpg);">
-              <span>台　<br>　中</span></label>
-            <input type="radio" class="hothot" name="hot" id="hot2">
-            <label for="hot2" id="hot2" onclick="changecontent(this)" style="background-image: url(im/taipei.jpg);">
-              <span>台　<br>　北</span></label>
-            <input type="radio" class="hothot" name="hot" id="hot3">
-            <label for="hot3" id="hot3" onclick="changecontent(this)" style="background-image: url(im/kaohsiung.jpg);">
-              <span>高　<br>　雄</span></label>
-            <input type="radio" class="hothot" name="hot" id="hot4">
-            <label for="hot4" id="hot4" onclick="changecontent(this)" style="background-image: url(im/taoyuan.jpg);">
-              <span>桃　<br>　園</span></label>
+          <input type="radio" class="hothot" name="hot" id="hot1" checked>
+          <label for="hot1" id="hot1" onclick="changecontent(this)" style="background-image: url(im/taichung.jpg);">
+            <span>台　<br>　中</span></label>
+          <input type="radio" class="hothot" name="hot" id="hot2">
+          <label for="hot2" id="hot2" onclick="changecontent(this)" style="background-image: url(im/taipei.jpg);">
+            <span>台　<br>　北</span></label>
+          <input type="radio" class="hothot" name="hot" id="hot3">
+          <label for="hot3" id="hot3" onclick="changecontent(this)" style="background-image: url(im/kaohsiung.jpg);">
+            <span>高　<br>　雄</span></label>
+          <input type="radio" class="hothot" name="hot" id="hot4">
+          <label for="hot4" id="hot4" onclick="changecontent(this)" style="background-image: url(im/taoyuan.jpg);">
+            <span>桃　<br>　園</span></label>
         </div>
       </div>
       <div class="hot_content">
         <div class="hot_content_left">
           <img src="im/taichung.jpg" alt="">
         </div>
-        
+
         <div class="hot_content_right">
           <div class="hot_content_title" id="hot_content_title"></div>
           <div class="hot_content_text" id="hot_content_text">
@@ -126,13 +79,13 @@
       <div class="new_title">旅圖新知</div>
       <div class="new_smalltitle">優惠無私分享</div>
       <div class="new_box">
-        <div class="new_img new_img1">1</div>
-        <div class="new_img new_img2">2</div>
-        <div class="new_img new_img3">3</div>
-        <div class="new_img new_img4">4</div>
-        <div class="new_img new_img5">5</div>
-        <div class="new_img new_img6">6</div>
-        <div class="new_img new_img7">7</div>
+        <div class="new_img new_img1"> <img src="im/花蓮線-已處理2.png" /></div>
+        <div class="new_img new_img2"> <img src="im/阿妹茶樓-已處理2.png" /></div>
+        <div class="new_img new_img3"> <img src="im/東澳沙灘車-已處理2.png" /></div>
+        <div class="new_img new_img4"> <img src="im/花蓮海洋公園-已處理2.png" /></div>
+        <div class="new_img new_img5"> <img src="im/台中麗寶-已處理2.png" /></div>
+        <div class="new_img new_img6"> <img src="im/阿里山線-已處理2.png" /></div>
+        <div class="new_img new_img7"> <img src="im/侏羅紀-已處理2.png" /></div>
       </div>
     </div>
   </div>
@@ -143,7 +96,7 @@
     </div>
     <div class="F_title"><img src="im/LOGO-Dtrip.png" alt=""></div>
   </footer>
-  <a id="backtotop" title="返回頂部"><i class="fas fa-chevron-circle-up fa-3x" alt="Back to Top"></i></a>
+  <a class="backtotop" id="backtotop"><i class="fas fa-chevron-circle-up fa-3x"></i></a>
 </body>
 
 </html>

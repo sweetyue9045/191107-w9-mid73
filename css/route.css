@@ -42,7 +42,7 @@ html, body {
 
 .container {
   padding: 50px 120px 50px 120px;
-  min-height: 450px;
+  min-height: 600px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,8 +128,8 @@ html, body {
   font-size: 14px;
   color: #2c5155;
   background-color: transparent;
-  background-image: none;
   border: 1px solid var(--Dark);
+  border-right: none;
   border-radius: 4px 0 0 4px;
   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
@@ -164,23 +164,19 @@ html, body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  background-image: none;
   border: 1px solid var(--Dark);
+  border-left: none;
   border-radius: 0 4px 4px 0;
   outline: none;
-  color: #4c777c;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .route_search {
-  background-color: var(--Dark);
-  color: #fff;
+  color: var(--Dark);
 }
 
 .route_search:active, .open > .route_search {
-  background-image: none;
-  background-color: #4c777c;
-  border-color: #4c777c;
+  color: var(--Font);
 }
 
 .choose_box {

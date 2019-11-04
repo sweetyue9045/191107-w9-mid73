@@ -141,6 +141,21 @@ $(function () {
 });
 
 /*----------首頁頁面----------*/
+//--抓資料庫 + 渲染行程--
+function home_route() {
+	$.get('../static/route.json', function (response) {
+		$.each(response, function (index, element) {
+			var a = element.length
+				for (i = 0; i < a; i++) {
+					var route = element[i];
+					$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)"><div class="wrap_img"><img src="../' + route.img[1] + '" alt=""></div><div class="wrap_text"><div class="wrap_title">' + route.title + '</div><div class="wrap_route">' + route.route + '</div></div></a></div>')
+					if (i < 5) {
+						$("#route_box").append('<div class="route_content"><a href="html/route.html" id="' + route.title + '"><div class="route_left"><img src="' + route.img[1] + '" alt=""></div><div class="route_right"><div class="route_title">' + route.title + '</div><div class="route_text">' + route.route + '</div></div></a></div>')
+					}
+				}
+		});
+	}, 'json')
+}
 //--抓資料庫--
 function home(x) {
 	$.get('static/Home.json', function (response) {
@@ -224,15 +239,14 @@ function route(myroute) {
 					$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)"><div class="wrap_img"><img src="../' + route.img[1] + '" alt=""></div><div class="wrap_text"><div class="wrap_title">' + route.title + '</div><div class="wrap_route">' + route.route + '</div></div></a></div>')
 					if (i < 5) {
 						$("#route_box").append('<div class="route_content"><a href="html/route.html" id="' + route.title + '"><div class="route_left"><img src="' + route.img[1] + '" alt=""></div><div class="route_right"><div class="route_title">' + route.title + '</div><div class="route_text">' + route.route + '</div></div></a></div>')
-					}}
+					}
+				}
 				choosearea = []
 			}
 
 		});
 		$("#route_content").fadeIn()
-
 	}, 'json')
-
 }
 function change() {
 	var rSearch = $("#route_search");

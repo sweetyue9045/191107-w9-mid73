@@ -100,6 +100,7 @@ $(function () {
 		if (check == 0) {
 			$("#CheckAll").prop("checked", true)
 			choosearea = null
+			$('#route_content').fadeOut(20);
 			document.getElementById("route_content").style.display = "none";
 			route(choosearea)
 		}
@@ -108,14 +109,14 @@ $(function () {
 	$(".route_form_control").keydown(function (event) {
 		if ($(".route_form_control").val().length == 1 && event.which == 8) {
 			document.getElementById("route_form_control").value = ""
+			$('#route_content').fadeOut(20);
 			document.getElementById("route_content").style.display = "none";
 			change();
-			$('#route_content').fadeIn();
 		}
 		if (event.which == 13) {
+			$('#route_content').fadeOut(20);
 			document.getElementById("route_content").style.display = "none";
 			change();
-			$('#route_content').fadeIn();
 			return false;
 		}
 	});
@@ -123,6 +124,8 @@ $(function () {
 		$(".items:checkbox").prop("checked", false)
 		$("#CheckAll").prop("checked", true)
 		choosearea = null
+		$('#route_content').fadeOut(20);
+		document.getElementById("route_content").style.display = "none";
 		route(choosearea)
 	})
 	$('.showintro').hide();
@@ -140,25 +143,20 @@ $(function () {
 /*----------首頁頁面----------*/
 //--抓資料庫--
 function home(x) {
-	$.ajax({
-		type: 'GET',
-		url: './static/Home.json',
-		dataType: 'json',
-		success: function (response) {
-			$.each(response, function (index, element) {
-				if (index == x) {
-					document.getElementById("hot_content_title").innerHTML = element.title;
-					document.getElementById("hot_content_text").innerHTML =
-						'地址：' + element.address + " <br/> " +
-						'電話：' + element.phone + " <br/> " +
-						'開放時間：' + element.time + " <br/> <br/> " +
-						element.hashtag;
-					$(".hot_content img").attr("src", element.img)
+	$.get('static/Home.json', function (response) {
+		$.each(response, function (index, element) {
+			if (index == x) {
+				document.getElementById("hot_content_title").innerHTML = element.title;
+				document.getElementById("hot_content_text").innerHTML =
+					'地址：' + element.address + " <br/> " +
+					'電話：' + element.phone + " <br/> " +
+					'開放時間：' + element.time + " <br/> <br/> " +
+					element.hashtag;
+				$(".hot_content img").attr("src", element.img)
 
-				}
-			});
-		}
-	});
+			}
+		});
+	}, 'json')
 }
 //--點擊hot--
 function changecontent(mytab) {
@@ -170,22 +168,17 @@ $(function () {
 })
 
 /*----------熱門頁面----------*/
---抓資料庫 + 渲染景點--
+//--抓資料庫 + 渲染景點--
 function attraction() {
-	$.ajax({
-		type: 'GET',
-		url: '../static/attraction.json',
-		dataType: 'json',
-		success: function (response) {
-			$.each(response, function (index, element) {
-				var a = element.length
-				for (i = 0; i < a; i++) {
-					var attraction = element[i];
-					$("#attraction_site").append('<div class="wrap attraction_intbox" data-index="' + attraction.name.toLowerCase() + ' ' + attraction.address + '"><div class="attraction_hover ' + attraction.name + '"><img src="' + attraction.img + '" /><div class="attraction_text"><div class="intbox_title">' + attraction.title + '</div><div class="intbox_address">' + attraction.area + '</div></div><div class="intbox_mask"><div class="intbox_mask_text">地址<br/>' + attraction.address + '<br/>開放時間<br/>' + attraction.time + '<br/>連絡電話<br/>' + attraction.phone + '</div></div></div></div>')
-				}
-			});
-		}
-	});
+	$.get('../static/attraction.json', function (response) {
+		$.each(response, function (index, element) {
+			var a = element.length
+			for (i = 0; i < a; i++) {
+				var attraction = element[i];
+				$("#attraction_site").append('<div class="wrap attraction_intbox" data-index="' + attraction.name.toLowerCase() + ' ' + attraction.address + '"><div class="attraction_hover ' + attraction.name + '"><img src="' + attraction.img + '" /><div class="attraction_text"><div class="intbox_title">' + attraction.title + '</div><div class="intbox_address">' + attraction.area + '</div></div><div class="intbox_mask"><div class="intbox_mask_text">地址<br/>' + attraction.address + '<br/>開放時間<br/>' + attraction.time + '<br/>連絡電話<br/>' + attraction.phone + '</div></div></div></div>')
+			}
+		});
+	}, 'json')
 }
 //--更新景點--
 function update() {
@@ -211,38 +204,35 @@ function area(area) {
 //--抓資料庫+渲染行程--
 function route(myroute) {
 	$("#route_content").empty()
-	$.ajax({
-		type: 'GET',
-		url: '../static/route.json',
-		dataType: 'json',
-		success: function (response) {
-			$.each(response, function (index, element) {
-				var a = element.length
-				if (myroute != null) {
-					for (k = 0; k < choosearea.length; k++) {
-						area = response[myroute[k]];
-						if (index == myroute[k]) {
-							for (i = 0; i < a; i++) {
-								var route = area[i];
-								$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)"><div class="wrap_img"><img src="../' + route.img[1] + '" alt=""></div><div class="wrap_text">' + route.title + '</br>' + route.route + '</div></a></div>')
-							}
+	$.get('../static/route.json', function (response) {
+		$.each(response, function (index, element) {
+			var a = element.length
+			if (myroute != null) {
+				for (k = 0; k < choosearea.length; k++) {
+					area = response[myroute[k]];
+					if (index == myroute[k]) {
+						for (i = 0; i < a; i++) {
+							var route = area[i];
+							$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)"><div class="wrap_img"><img src="../' + route.img[1] + '" alt=""></div><div class="wrap_text"><div class="wrap_title">' + route.title + '</div><div class="wrap_route">' + route.route + '</div></div></a></div>')
 						}
 					}
 				}
-				if (myroute == null) {
-					for (i = 0; i < a; i++) {
-						var route = element[i];
-						$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)"><div class="wrap_img"><img src="../' + route.img[1] + '" alt=""></div><div class="wrap_text"><div class="wrap_title">' + route.title + '</div><div class="wrap_route">' + route.route + '</div></div></a></div>')
-						if (i < 5) {
-							$("#route_box").append('<div class="route_content"><div class="route_left"><img src="' + route.img[1] + '" alt=""></div><div class="route_right"><div class="route_title">' + route.title + '</div><div class="route_text">' + route.route + '</div></div></div>')
-						}
-					}
-					choosearea = []
-				}
-			});
-		}
-	});
-	$("#route_content").fadeIn(800)
+			}
+			if (myroute == null) {
+				for (i = 0; i < a; i++) {
+					var route = element[i];
+					$("#route_content").append('<div class="wrap" data-index="' + route.title + ' ' + route.area + '"><a class="name" id="' + route.title + '" onclick="showin(this)"><div class="wrap_img"><img src="../' + route.img[1] + '" alt=""></div><div class="wrap_text"><div class="wrap_title">' + route.title + '</div><div class="wrap_route">' + route.route + '</div></div></a></div>')
+					if (i < 5) {
+						$("#route_box").append('<div class="route_content"><a href="html/route.html" id="' + route.title + '"><div class="route_left"><img src="' + route.img[1] + '" alt=""></div><div class="route_right"><div class="route_title">' + route.title + '</div><div class="route_text">' + route.route + '</div></div></a></div>')
+					}}
+				choosearea = []
+			}
+
+		});
+		$("#route_content").fadeIn()
+
+	}, 'json')
+
 }
 function change() {
 	var rSearch = $("#route_search");
@@ -277,6 +267,8 @@ function choose(mychoose) {
 	else {
 		choosearea.remove(mychoose.id)
 	}
+	$('#route_content').fadeOut(20);
+
 	document.getElementById("route_content").style.display = "none";
 	route(choosearea)
 }
@@ -286,29 +278,24 @@ function choose(mychoose) {
 function showin(id) {
 	$(".tourline").empty()
 	$(".intro_intro").empty()
-	$.ajax({
-		type: 'GET',
-		url: '../static/route.json',
-		dataType: 'json',
-		success: function (response) {
-			$.each(response, function (index, element) {
-				var a = element.length
-				for (i = 0; i < a; i++) {
-					if (element[i].title == id.id) {
-						var b = element[i].place.length
-						$(".intro_intro").append('<div class="tourline_title">'+element[i].title+'</div><div class="tourline_intro">'+element[i].intro+'</div>')
-						for (x = 0; x < b; x++) {
-							$(".tourline").append('<div class="tourlineBox"><img src="../' + element[i].img[x] + '"><div class="tourlineSpots_Right"><div class="tourlineSpots_title">' + element[i].place[x] + '</div>' + element[i].contents[x] + '</div></div>')
-							if (x < b - 1) {
-								$(".tourline").append('<div class="tourlineBox_distance"><div class="distancebtn"><i class="fas fa-map-marker-alt"></i><a href="' + element[i].map[x] + '" target="_blank">  兩點距離：' + element[i].distance[x] + '</a></div></div>')
-							}
+	$.get('../static/route.json', function (response) {
+		$.each(response, function (index, element) {
+			var a = element.length
+			for (i = 0; i < a; i++) {
+				if (element[i].title == id.id) {
+					var b = element[i].place.length
+					$(".intro_intro").append('<div class="tourline_title">' + element[i].title + '</div><div class="tourline_intro">' + element[i].intro + '</div>')
+					for (x = 0; x < b; x++) {
+						$(".tourline").append('<div class="tourlineBox"><img src="../' + element[i].img[x] + '"><div class="tourlineSpots_Right"><div class="tourlineSpots_title">' + element[i].place[x] + '</div>' + element[i].contents[x] + '</div></div>')
+						if (x < b - 1) {
+							$(".tourline").append('<div class="tourlineBox_distance"><div class="distancebtn"><i class="fas fa-map-marker-alt"></i><a href="' + element[i].map[x] + '" target="_blank">  兩點距離：' + element[i].distance[x] + '</a></div></div>')
 						}
 					}
 				}
+			}
 
-			})
-		}
-	})
+		})
+	}, 'json')
 	$('.showintro').fadeIn();
 }
 

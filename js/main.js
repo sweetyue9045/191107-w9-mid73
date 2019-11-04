@@ -179,6 +179,8 @@ function changecontent(mytab) {
 //--自己生成hot--
 $(function () {
 	home("hot1");
+	home_route();
+
 })
 
 /*----------熱門頁面----------*/

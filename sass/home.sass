@@ -1,12 +1,12 @@
 @font-face 
-  font-family: "MT"
-  src: url('../font/ARIALMT.ttf') format("truetype"),url('../font/ARIALMT.woff') format("woff")
+	font-family: "MT"
+	src: url('../font/ARIALMT.ttf') format("truetype"),url('../font/ARIALMT.woff') format("woff")
 \:root
-  --Dark: #679298
-  --Back: #ECF4F7
-  --Font: #264D52
-  --NAV_F: #ECF4F7
-  --UPBA: rgba(255, 255, 255, 0.5)
+	--Dark: #679298
+	--Back: #ECF4F7
+	--Font: #264D52
+	--NAV_F: #ECF4F7
+	--UPBA: rgba(255, 255, 255, 0.5)
 *
 	margin: auto
 	padding: 0
@@ -51,10 +51,8 @@ header
 	animation-fill-mode: forwards
 .first_text
 	position: absolute
-	width: 0
-	height: 0
 	top: 5vw
-	left: 27%
+	width: 0
 	transform: translate(-50%,-50%)
 	overflow: hidden
 	padding: 2px 0 2px 0
@@ -67,9 +65,7 @@ header
 .second_text
 	position: absolute
 	width: 0
-	height: 0
 	top: 9vw
-	left: 20%
 	transform: translate(-50%,-50%)
 	overflow: hidden
 	padding: 2px 0 2px 0
@@ -97,26 +93,22 @@ header
 			height: 0
 			width: 1px
 			left: 27%
-			padding: 2px 0 2px 0
 			border-right: 1px solid #464646
 		20%
 			height: 3vw
 			width: 1px
 			left: 27%
-			padding: 2px 0 2px 0
 			border-right: 1px solid #464646
 		90%
 			height: 3vw
 			width: 15vw
 			left: 50.5%
-			padding: 2px 0 2px 0
 			border-right: 1px solid #464646
 
 		100%
 			height: 3vw
 			width: 15vw
 			left: 50.5%
-			padding: 2px 0 2px 0
 			border-right: 2px solid none
 
 @keyframes run3
@@ -124,33 +116,29 @@ header
 			height: 2vw
 			width: 1px
 			left: 20%
-			padding: 2px 0 2px 0
 			border-right: 1px solid #464646
 		10%
 			height: 2vw
 			width: 1px
 			left: 20%
-			padding: 2px 0 2px 0
 			border-right: 1px solid #464646
 		90%
 			height: 2vw
 			width: 18vw
 			left: 50.5%
-			padding: 2px 0 2px 0
 			border-right: 1px solid #464646
 
 		100%
 			height: 2vw
 			width: 18vw
 			left: 50.5%
-			padding: 2px 0 2px 0
 			border-right: 2px solid none
 .route_box
-    display: grid
-    grid-template-columns: 32.5% 32.5% 32.5%
-    grid-column-gap: 1.25%
-    grid-row-gap: 15px
-    margin: 0 auto
+		display: grid
+		grid-template-columns: 32.5% 32.5% 32.5%
+		grid-column-gap: 1.25%
+		grid-row-gap: 15px
+		margin: 0 auto
 .route_content
 	width: 100%
 	background-color: var(--UPBA)
@@ -251,6 +239,7 @@ header
 	transition: all .1s ease
 
 .hot_content
+	width: 100%
 	margin-top: 30px
 	background-color: var(--UPBA)
 	color: #264D52
@@ -276,11 +265,52 @@ header
 	font-size: 14px
 	line-height: 24px
 
-.hot_content img
+.hot_content_left img
 	width: 100%
 	top: 50%
 	transform: translateY(-50%)
+.hot_content_paint
+	height: 100%
+	transform-origin: bottom
 
+	animation: box 1.5s linear infinite alternate
+
+.hot_content_box
+	right: 10%
+	height: 10vw
+	position: absolute
+	bottom: 16%
+.hot_content_box:after
+	content: ''
+	position: absolute
+	z-index: 1
+	bottom: -4px
+	left: 50%
+	transform: translateX(-50%)
+	height: 3px
+	background: #31313111
+	border-radius: 100%
+	animation: shadow 1.5s linear infinite  
+
+@keyframes shadow
+	0%,100%
+		width: 80%
+	
+	50%
+		bottom: -4px
+		width: 90%
+		height: 7px
+@keyframes box
+		0%
+			bottom: 5%
+			transform: rotate(7deg)		
+		50%
+			bottom: 0
+			transform: rotate(0deg)
+		100%
+			bottom: 5%
+			transform: rotate(-3deg)
+	
 .new
 	margin-top: 40px
 	min-height: 50px
@@ -320,13 +350,13 @@ header
 .new_img7
 	grid-column: span 3
 .new_img img
-    width: 100%
-    border-radius: 1px
+		width: 100%
+		border-radius: 1px
 
 .new_img:hover
 	z-index: 10
 	overflow: visible
 
 .new_img img:hover 
-    filter: contrast(130%)
-    transform: scale(1.3)
+		filter: contrast(130%)
+		transform: scale(1.3)

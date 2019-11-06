@@ -482,7 +482,7 @@ html, body {
 }
 
 .intbox_title {
-  font-size: 17px;
+  font-size: 16px;
   color: rgba(247, 255, 252, 0.9);
   text-align: left;
   margin-left: 15px;
@@ -492,7 +492,7 @@ html, body {
 
 .intbox_address {
   position: absolute;
-  font-size: 17px;
+  font-size: 16px;
   color: rgba(247, 255, 252, 0.9);
   right: 15px;
   padding-top: 17px;

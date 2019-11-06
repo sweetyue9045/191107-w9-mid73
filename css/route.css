@@ -42,7 +42,6 @@ html, body {
 
 .container {
   padding: 50px 120px 50px 120px;
-  min-height: 600px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -112,6 +112,7 @@ $(function () {
 			$('#route_content').fadeOut(20);
 			document.getElementById("route_content").style.display = "none";
 			change();
+			$('#route_content').fadeIn();
 		}
 		if (event.which == 13) {
 			$('#route_content').fadeOut(20);

@@ -175,8 +175,8 @@ html, body {
   width: 20%;
   top: 12%;
   right: -40%;
-  -webkit-animation: run 10s 4s linear infinite;
-          animation: run 10s 4s linear infinite;
+  -webkit-animation: run 16s 8s linear infinite;
+          animation: run 16s 8s linear infinite;
 }
 
 .smallcloud {
@@ -184,8 +184,8 @@ html, body {
   width: 17%;
   top: 30%;
   right: -40%;
-  -webkit-animation: run2 10s linear infinite;
-          animation: run2 10s linear infinite;
+  -webkit-animation: run2 16s linear infinite;
+          animation: run2 16s linear infinite;
   z-index: 2;
 }
 

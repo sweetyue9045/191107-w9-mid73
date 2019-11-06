@@ -13,19 +13,11 @@ $(function () {
 	}).scroll();
 	$(window).scroll(function () {
 		if ($(this).scrollTop() > 100) {
-			if ($(this).scrollTop() < down - 600) $('#backtotop').stop().animate({ bottom: "20px" });
+			if ($(this).scrollTop() < down - 600) $('#backtotop').stop().animate({ bottom: "2vw" });
 			else $('#backtotop').stop().animate({ bottom: "-65px" });
 		}
 		else {
 			$('#backtotop').stop().animate({ bottom: "-65px" });
-		}
-	}).scroll();
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 1) {
-			$('#backtoroute').stop().animate({ bottom: "20px" });
-		}
-		else {
-			$('#backtoroute').stop().animate({ bottom: "-65px" });
 		}
 	}).scroll();
 	$('#backtotop').click(function () { $('html,body').animate({ scrollTop: 0 }, 800); });
@@ -67,8 +59,8 @@ $(function () {
 			document.getElementById("form-control").style.display = "block";
 			document.getElementById("attraction_hot").style.display = "none";
 			$('#attraction_content').fadeIn();
-			$("#searchitem").attr("style", "border-radius: 0 4px 4px 0 ;outline: none")
-			$("#input-group").animate({ width: '200px' }, 200);
+			$("#searchitem").attr("style", "border-radius: 0 0.3vw 0.3vw 0 ;outline: none")
+			$("#input-group").animate({ width: '16vw' }, 200);
 			searchbar = 1;
 		}
 		else if (searchbar != 0) {

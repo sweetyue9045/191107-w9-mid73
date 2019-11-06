@@ -411,13 +411,29 @@ html, body {
 }
 
 .int {
-  font-size: 16px;
   color: var(--Font);
   top: 50%;
-  padding: 0 5vw;
+  padding: 0 3vw;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   line-height: 2.5vw;
+}
+
+.int_title {
+  font-size: 16px;
+}
+
+.int_text {
+  font-size: 14px;
+}
+
+.int_img {
+  position: absolute;
+  top: 58%;
+  right: 3vw;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 30%;
 }
 
 .attraction_site {

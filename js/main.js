@@ -166,7 +166,7 @@ function home(x) {
 					'電話：' + element.phone + " <br/> " +
 					'開放時間：' + element.time + " <br/> <br/> " +
 					element.hashtag;
-				$("#hot_content_left img").attr("src", element.img)
+				$("#hot_content_left_img").attr("src", element.img)
 
 			}
 		});

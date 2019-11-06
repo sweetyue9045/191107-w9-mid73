@@ -259,15 +259,18 @@ header {
   display: grid;
   -ms-grid-columns: 32.5% 32.5% 32.5%;
       grid-template-columns: 32.5% 32.5% 32.5%;
+  -ms-grid-rows: 9vw 9vw;
+      grid-template-rows: 9vw 9vw;
   grid-column-gap: 1.25%;
-  grid-row-gap: 15px;
+  grid-row-gap: 1.25vw;
   margin: 0 auto;
 }
 
 .route_content {
   width: 100%;
+  height: 100%;
   background-color: var(--UPBA);
-  padding: 15px;
+  padding: 5%;
   border-radius: 3px;
   -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
@@ -279,21 +282,27 @@ header {
   display: -ms-flexbox;
   display: flex;
   text-decoration: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .route_left {
-  width: 25%;
+  width: 7vw;
   padding: 0 10px 0 10px;
 }
 
 .route_content img {
-  height: 60px;
-  width: 60px;
+  height: 5vw;
+  width: 5vw;
   border-radius: 50%;
 }
 
 .route_right {
-  width: 75%;
+  width: calc(100% - 7vw);
   padding: 20px 0 20px 5px;
   min-height: 70px;
   letter-spacing: 1px;
@@ -309,7 +318,7 @@ header {
 
 .route_text {
   font-size: 12px;
-  margin: 8px 0 0 0;
+  margin: 5% 0 0 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -401,10 +410,11 @@ header {
 
 .hot_content {
   width: 100%;
+  height: 25vw;
   margin-top: 30px;
   background-color: var(--UPBA);
   color: #264D52;
-  padding: 20px 25px;
+  padding: 20px 20px;
   letter-spacing: 1px;
   -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
@@ -415,7 +425,7 @@ header {
 
 .hot_content_left {
   width: 45%;
-  height: 245px;
+  height: 100%;
   overflow: hidden;
 }
 

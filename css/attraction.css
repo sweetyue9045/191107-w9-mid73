@@ -13,7 +13,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
-  font-family: "微軟正黑體", cursive;
 }
 
 * ::-webkit-scrollbar {
@@ -34,6 +33,7 @@ html, body {
   height: 100%;
   background-color: #fff;
   overflow-x: hidden;
+  font-family: "微軟正黑體";
 }
 
 .Carousel {
@@ -86,7 +86,7 @@ html, body {
 
 .btn {
   display: inline-block;
-  padding: 0.45vw 0.9vw;
+  padding: 0.65vw 0.9vw;
   height: 2.6vw;
   margin-bottom: 0;
   font-size: 1.1vw;

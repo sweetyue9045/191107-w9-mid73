@@ -415,12 +415,13 @@ html, body {
 }
 
 .int_title {
-  font-size: 1.1vw;
+  font-size: 1.3vw;
 }
 
 .int_text {
+  margin-top: 10px;
   font-size: 0.95vw;
-  line-height: 1.8vw;
+  line-height: 2vw;
 }
 
 .int_img {
@@ -486,7 +487,7 @@ html, body {
 .attraction_text {
   position: absolute;
   width: 100%;
-  height: 4vw;
+  height: 4.7vw;
   bottom: 0px;
   background-color: rgba(0, 0, 0, 0.5);
   -webkit-transition: all .3s;
@@ -494,20 +495,20 @@ html, body {
 }
 
 .intbox_title {
-  font-size: 1.1vw;
+  font-size: 1.3vw;
   color: rgba(247, 255, 252, 0.9);
   text-align: left;
   margin-left: 15px;
-  padding-top: 1.1vw;
+  padding-top: 1.3vw;
   display: inline-block;
 }
 
 .intbox_address {
   position: absolute;
-  font-size: 1.1vw;
+  font-size: 1.3vw;
   color: rgba(247, 255, 252, 0.9);
   right: 15px;
-  padding-top: 1.1vw;
+  padding-top: 1.3vw;
   display: inline-block;
 }
 
@@ -628,7 +629,7 @@ html, body {
 
 .loader {
   margin: 60px auto;
-  font-size: 1.1vw;
+  font-size: 1.3vw;
   position: relative;
   text-indent: -9999em;
   border-top: 5px solid #ffffffbb;

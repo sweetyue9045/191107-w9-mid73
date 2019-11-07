@@ -538,10 +538,10 @@ header {
 }
 
 .new {
-  margin-top: 40px;
   min-height: 50px;
   width: 96%;
   color: var(--Font);
+  margin: 40px auto;
 }
 
 .new_title {
@@ -563,8 +563,8 @@ header {
   display: grid;
   -ms-grid-columns: (10%)[10];
       grid-template-columns: repeat(10, 10%);
-  -ms-grid-rows: 12vw 12vw;
-      grid-template-rows: 12vw 12vw;
+  -ms-grid-rows: 11.55vw 11.55vw;
+      grid-template-rows: 11.55vw 11.55vw;
 }
 
 .new_img {
